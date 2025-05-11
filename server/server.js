@@ -1649,8 +1649,11 @@
     			_createdOn: 1616237272948,
     			_updatedOn: 1616237293676
     		}
-    	}
-        
+    	},
+        sunglasses: {
+            
+        }
+
     };
     var rules$1 = {
     	users: {
