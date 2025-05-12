@@ -1,0 +1,56 @@
+.home-container {
+    box-sizing: border-box;
+    max-width: 1440px;
+    overflow: hidden;
+}
+.top-container{
+    position: relative;
+}
+
+.home-top-img {
+    width: 100%;
+}
+
+.top-for-her{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #702525;
+    border: none;
+    color: white;
+    font-family: sans-serif;
+    padding: 10px 40px;
+    font-size: 20px;
+    border-radius: 3px;
+}
+
+.middle-container{
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+}
+.middle-container img{
+    width: 50%;
+}
+
+.middle-container a {
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 10px 40px;
+    border-radius: 3px;
+    font-family: sans-serif;
+}
+
+.mid-left-women-eyewear{
+    bottom: 50px;
+    left: 25%;
+    transform: translateX(-50%);
+}
+.mid-right-mens-eyewear{
+    bottom: 50px;
+    right: 25%;
+    transform: translateX(50%);
+}

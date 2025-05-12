@@ -1,0 +1,43 @@
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-btns{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.logo-btns a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo-btns img{
+    background: none;
+    max-width: 80px;
+}
+
+.search-cart {
+    display: flex;
+    padding-right: 60px;
+    gap: 25px;
+}
+
+.search {
+    border: none;
+    background-color: transparent;
+   align-self: center;
+   
+}
+
+.cart {
+    align-self: center;
+    background-color: transparent;
+    border: none;
+    min-width: 40px;
+}
