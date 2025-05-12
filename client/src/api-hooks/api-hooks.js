@@ -2,42 +2,27 @@
 
 import axios from "axios";
 
-// https://fakestoreapi.com/products
-// GET single product by ID
 
-// https://fakestoreapi.com/products/:id
-// GET all categories
-
-// https://fakestoreapi.com/products/categories
-// GET products in a specific category
-
-// https://fakestoreapi.com/products/category/:category
-
-// Users
-// GET all users
-
-
-// https://fakestoreapi.com/users
-// GET single user
-
-
-// https://fakestoreapi.com/users/:id
-// POST create user
-
-
-// https://fakestoreapi.com/users
-
-// Authentication
-// POST login (returns token)
-
-// https://fakestoreapi.com/auth/login
-// Body:
-
-// {
-//   "username": "mor_2314",
-//   "password": "83r5^_"
 
 const api = axios.create({
-    baseUrl: 'https://fakestoreapi.com',
+    baseURL: 'https://dummyjson.com',
     timeout: 5000
 })
+
+export const useGetBestSellers = () => {
+
+    const getBestSellers = async () => {
+        const response1 = await api.get(`/products/category/mens-shirts`);
+        const response2 = await api.get(`/products/category/mens-shoes`);
+        const response3 = await api.get(`/products/category/mens-watches`);
+
+        const productsPromise = Promise.all([response1,response2,response3])
+        const products = (await productsPromise).flatMap(res => res.data.products)
+        const sorted = products.sort((a,b) => b.rating - a.rating);
+        const newSorted = sorted.slice(0,4);
+
+        return newSorted;
+    }
+
+    return {getBestSellers}
+}
