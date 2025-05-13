@@ -2,6 +2,9 @@
 .header-container{
     display: flex;
     justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    
 }
 
 .logo-btns{
@@ -41,3 +44,66 @@
     border: none;
     min-width: 40px;
 }
+
+.menu-item{
+    position: relative;
+}
+
+.menu-item .dropdown{
+    display: flex;
+    position: fixed;
+    top: 115px;
+    left: 0;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: ease 0.4s, visibility 0.2s ease ;
+    
+}
+
+.menu-item:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .dropdown{
+    display: flex;
+    justify-content: space-between;
+  }
+  .dropdown .dropdown-clothing, .dropdown-shoes, .dropdown-accessoaries {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+   padding: 40px;
+  }
+  .dropdown h1{
+    font-size: 15px;
+  }
+  .dropdown a{
+    text-decoration: none;
+    color: black;
+    padding: 8px 12px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .dropdown-image{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 40px;
+    
+  }
+  .dropdown-image img{
+
+      height: 150px;
+      min-width: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  }
+
+ 

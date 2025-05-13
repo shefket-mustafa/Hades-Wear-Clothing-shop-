@@ -2,14 +2,54 @@ import { Link } from "react-router";
 
 import './header.css'
 import logoHades from '../../assets/images/logo1.jpg'
+import dropVisual from '../../assets/images/dropdown-visual.webp'
+import dropVisual2 from '../../assets/images/dropdown-visuals-shoes.webp'
+import DropDownImage from "./dropdown-visuals-image/DropDownImage";
 
 export default function Header() {
   return <div className="header-container">
 
     <div className="logo-btns">
         <img src={logoHades} alt="Hades logo loading..." />
+
+        <div className="menu-item">
         <Link style={{paddingLeft: '80px'}}>Women</Link>
+
+        <div className="dropdown">
+          <div className="dropdown-clothing">
+            <h1>CLOTHING</h1>
+            <Link to='/category/womens-shirts'>WOMENS SHIRTS</Link>
+            <Link to='/category/womens-dresses'>WOMENS DRESSES</Link>
+          </div>
+
+          <div className="dropdown-shoes">
+            <h1>SHOES</h1>
+          <Link to='/category/womens-shoes'>WOMENS SHOES</Link>
+          </div>
+
+          <div className="dropdown-accessoaries">
+            <h1>ACCESOARIES</h1>
+          <Link to='/category/womens-bags'>WOMENS BAGS</Link>
+          <Link to='/category/womens-watches'>WOMENS WATCHES</Link>
+          <Link to='/category/womens-jewellery'>WOMENS JEWELLERY</Link>
+          <Link to='/category/womens-skincare'>SKINCARE</Link>
+          </div>
+
+          <div className="dropdown-image">
+            <DropDownImage image={dropVisual} title='EYEWEAR'/>
+            <DropDownImage image={dropVisual2} title='FOOTWEAR'/>
+          </div>
+        </div>
+        </div>
+
+        <div className="menu-item">
         <Link style={{paddingLeft: '40px'}}>Men</Link>
+        <div className="dropdown">
+          <Link to='/category/womens-shirts'>MENS SHIRTS</Link>
+          <Link to='/category/womens-shoes'>MENS SHOES</Link>
+          <Link to='/category/womens-watches'>MENS WATCHES</Link>
+        </div>
+        </div>
     </div>
 
     <div className="search-cart">
