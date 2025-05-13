@@ -1,0 +1,10 @@
+.dropdown-image-comp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-image-comp:hover {
+    cursor: pointer;
+}
