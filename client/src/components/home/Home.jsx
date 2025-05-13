@@ -1,11 +1,10 @@
 import './home.css'
 
-import TopContainer from '../top-container/TopContainer';
-import MiddleContainer from '../middle-container/MiddleContainer';
-import BestSellerContainer from '../best-seller-container/BestSellerContainer';
-import MenWomenContainer from '../men-women-container/MenWomenContainer';
-import ViewCollections from '../view-collections/ViewCollections';
-import Footer from '../footer/Footer';
+import TopContainer from './top-container/TopContainer';
+import MiddleContainer from './middle-container/MiddleContainer';
+import BestSellerContainer from './best-seller-container/BestSellerContainer';
+import MenWomenContainer from './men-women-container/MenWomenContainer';
+import ViewCollections from './view-collections/ViewCollections';
 
 
 export default function Home() {
@@ -18,9 +17,9 @@ export default function Home() {
     <MenWomenContainer />
     <ViewCollections />
     <div className='red-line'>
-      
+  
     </div>
-    <Footer />
+    
     
 
     
