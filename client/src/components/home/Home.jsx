@@ -17,7 +17,6 @@ export default function Home() {
     <MenWomenContainer />
     <ViewCollections />
     <div className='red-line'>
-  
     </div>
     
     
