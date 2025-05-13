@@ -1,0 +1,33 @@
+.men-women-container{
+    display: flex;
+    box-sizing: border-box;
+    max-width: 1440px;
+    overflow: hidden;
+    position: relative;
+}
+
+.men-women-container img{
+    width: 100%;
+}
+
+.men-women-container a {
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 10px 40px;
+    border-radius: 3px;
+    font-family: sans-serif;
+}
+
+.women-men-women-a{
+    bottom: 50px;
+    left: 38%;
+    transform: translateX(-50%);
+}
+
+.women-men-men-a{
+    bottom: 50px;
+    right: 38%;
+    transform: translateX(50%);
+}
