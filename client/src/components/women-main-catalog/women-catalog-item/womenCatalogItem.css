@@ -1,0 +1,18 @@
+
+
+.women-catalog-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 5px;
+    
+}
+.women-catalog-item img{
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+}
+
+.women-catalog-item p{
+    padding-left: 100px;
+}
