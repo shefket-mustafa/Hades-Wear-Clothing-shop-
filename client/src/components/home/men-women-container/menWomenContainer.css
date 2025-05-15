@@ -1,7 +1,6 @@
 .men-women-container{
     display: flex;
     box-sizing: border-box;
-    max-width: 1440px;
     overflow: hidden;
     position: relative;
 }
