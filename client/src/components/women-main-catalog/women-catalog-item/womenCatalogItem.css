@@ -6,13 +6,23 @@
     justify-content: center;
     align-items: flex-start;
     line-height: 5px;
+    background-color: rgb(245, 245, 245);
     
 }
 .women-catalog-item img{
     width: 100%;
-    background-color: rgb(245, 245, 245);
+    transition: ease 0.2s;
+}
+
+.women-item-img img:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .women-catalog-item p{
     padding-left: 100px;
+}
+.women-catalog-item-p{
+    width: 100%;
+    background-color: white;
 }
