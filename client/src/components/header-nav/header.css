@@ -50,6 +50,7 @@
 }
 
 .menu-item .dropdown{
+    min-height: 300px;
     display: flex;
     position: fixed;
     top: 115px;
@@ -59,7 +60,7 @@
     width: 100vw;
     opacity: 0;
     visibility: hidden;
-    transition: ease 0.4s, visibility 0.2s ease ;
+    transition: ease-in 0.4s, visibility 0.2s ease ;
     
 }
 
@@ -67,12 +68,11 @@
     visibility: visible;
     opacity: 1;
   }
-
   .dropdown{
     display: flex;
     justify-content: space-between;
   }
-  .dropdown .dropdown-clothing, .dropdown-shoes, .dropdown-accessoaries {
+  .dropdown .dropdown-clothing, .dropdown-shoes, .dropdown-accessoaries, .dropdown-tech {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -105,5 +105,14 @@
   object-fit: cover;
   border-radius: 4px;
   }
+
+  .dropdown .dropdown-mens-clothing, .dropdown-mens-shoes, .dropdown-mens-acessoaries {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+   padding: 40px;
+  }
+
 
  

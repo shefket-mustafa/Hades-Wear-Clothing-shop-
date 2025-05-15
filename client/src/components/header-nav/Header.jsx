@@ -4,6 +4,8 @@ import './header.css'
 import logoHades from '../../assets/images/logo1.jpg'
 import dropVisual from '../../assets/images/dropdown-visual.webp'
 import dropVisual2 from '../../assets/images/dropdown-visuals-shoes.webp'
+import mensVisual from '../../assets/images/mensDropdown1.webp'
+import mensVisual2 from '../../assets/images/mensVisual2.webp'
 import DropDownImage from "./dropdown-visuals-image/DropDownImage";
 
 export default function Header() {
@@ -13,7 +15,7 @@ export default function Header() {
         <img src={logoHades} alt="Hades logo loading..." />
 
         <div className="menu-item">
-        <Link style={{paddingLeft: '80px'}}>Women</Link>
+        <Link to='/catalog/women' style={{paddingLeft: '80px'}}>Women</Link>
 
         <div className="dropdown">
           <div className="dropdown-clothing">
@@ -32,7 +34,15 @@ export default function Header() {
           <Link to='/category/womens-bags'>WOMENS BAGS</Link>
           <Link to='/category/womens-watches'>WOMENS WATCHES</Link>
           <Link to='/category/womens-jewellery'>WOMENS JEWELLERY</Link>
+          <Link to='/category/womens-accessoaries-sunglasses'>WOMENS SUNGLASSES</Link>
           <Link to='/category/womens-skincare'>SKINCARE</Link>
+          <Link to='/category/womens-fragrances'>WOMENS FRAGRANCES</Link>
+          </div>
+
+          <div className="dropdown-tech">
+            <h1>TECH</h1>
+          <Link to='/category/womens-laptops'>LAPTOPS</Link>
+          <Link to='/category/womens-smartphones'>SMARTPHONES</Link>
           </div>
 
           <div className="dropdown-image">
@@ -43,13 +53,41 @@ export default function Header() {
         </div>
 
         <div className="menu-item">
-        <Link style={{paddingLeft: '40px'}}>Men</Link>
+        <Link to='/catalog/men' style={{paddingLeft: '40px'}}>Men</Link>
+
         <div className="dropdown">
-          <Link to='/category/womens-shirts'>MENS SHIRTS</Link>
-          <Link to='/category/womens-shoes'>MENS SHOES</Link>
-          <Link to='/category/womens-watches'>MENS WATCHES</Link>
+        <div className="dropdown-mens-clothing">
+            <h1>CLOTHING</h1>
+            <Link to='/category/womens-shirts'>MENS SHIRTS</Link>
+          </div>
+        
+
+        <div className="dropdown-mens-shoes">
+            <h1>SHOES</h1>
+          <Link to='/category/mens-shoes'>MENS SHOES</Link>
+          </div>
+
+          <div className="dropdown-mens-acessoaries">
+            <h1>ACCESOARIES</h1>
+          <Link to='/category/mens-accessoaries'>MENS WATCHES</Link>
+          <Link to='/category/mens-accessoaries-sunglasses'>MENS SUNGLASSES</Link>
+          <Link to='/category/mens-accessoaries-fragrances'>MENS FRAGRANCES</Link>
+          </div>
+
+          <div className="dropdown-tech">
+            <h1>TECH</h1>
+          <Link to='/category/mens-laptops'>LAPTOPS</Link>
+          <Link to='/category/mens-smartphones'>SMARTPHONES</Link>
+          </div>
+
+          <div className="dropdown-image">
+            <DropDownImage image={mensVisual} title='EYEWEAR'/>
+            <DropDownImage image={mensVisual2} title='WATCHES'/>
+          </div>
+
+          
         </div>
-        </div>
+    </div>
     </div>
 
     <div className="search-cart">
