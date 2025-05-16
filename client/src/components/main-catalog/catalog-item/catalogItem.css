@@ -15,7 +15,7 @@
     transition: ease 0.2s;
 }
 
-.item-img img:hover{
+.catalog-item-img img:hover{
     transform: scale(1.1);
     cursor: pointer;
 }

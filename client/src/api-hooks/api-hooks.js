@@ -26,6 +26,20 @@ export const useGetBestSellers = () => {
   return { getBestSellers };
 };
 
+export const useGetProductById = () => {
+
+  const getProductById = async(productId) => {
+
+    try{
+      const response = await api.get(`/products/${productId}`)
+      return response.data;
+    }catch(err){
+      console.error('Failed to load product: '+err.message)
+    }
+  }
+  return {getProductById}
+}
+
 
 
 

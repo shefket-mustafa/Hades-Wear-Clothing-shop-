@@ -1,7 +1,11 @@
+import { useNavigate } from 'react-router';
 import './catalogItem.css'
 
 export default function CatalogItem({product}) {
-  return <div className='catalog-item'>
+
+  const navigate = useNavigate();
+
+  return <div onClick={() => navigate(`/catalog/${product.id}/details`)} className='catalog-item'>
     <div className='catalog-item-img'>
     <img src={product.images[0]} alt={product.title} />
     </div>
