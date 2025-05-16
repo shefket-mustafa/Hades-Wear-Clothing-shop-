@@ -6,8 +6,8 @@ export default function MenCatalogItem({product}) {
     <img src={product.images[0]} alt={product.title} />
     </div>
     <div className='men-catalog-item-p'>
-    <p>{product.title}</p>
-    <p>{product.price}</p>
+    <p style={{fontWeight: '300'}}>{product.title}</p>
+    <p style={{fontWeight: '600'}}>{product.price} €</p>
     </div>
     <div>
         </div>

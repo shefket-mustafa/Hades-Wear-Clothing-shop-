@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useGetAllWomensItems } from '../../api-hooks/api-hooks';
+import { useGetAllWomensItems } from '../../api-hooks/api-hooks-women';
 import './womenMainCatalog.css'
 import WomenCatalogItem from './women-catalog-item/WomenCatalogItem';
 

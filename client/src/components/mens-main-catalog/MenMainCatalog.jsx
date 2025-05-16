@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useGetAllMensItems } from '../../api-hooks/api-hooks';
+import { useGetAllMensItems } from '../../api-hooks/api-hooks-men';
 import './menMainCatalog.css'
 
 import MenCatalogItem from './men-catalog-item/MenCatalogItem';
