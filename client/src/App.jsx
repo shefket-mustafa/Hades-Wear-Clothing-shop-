@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer.jsx';
 import { Route, Routes } from "react-router";
 import WomenMainCatalog from "./components/women-main-catalog/WomenMainCatalog.jsx";
 import Scroll from "./components/scroll-ontop/Scroll.jsx";
+import RedLine from "./components/home/red-line/RedLine.jsx";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 
       <Route path="*" element={<div>404 Not Found</div>} />
     </Routes>
+    <RedLine />
       <Footer />
     </>
   )

@@ -16,13 +16,5 @@ export default function Home() {
     <BestSellerContainer />
     <MenWomenContainer />
     <ViewCollections />
-    <div className='red-line'>
-    </div>
-    
-    
-
-    
-
-
   </div>;
 }
