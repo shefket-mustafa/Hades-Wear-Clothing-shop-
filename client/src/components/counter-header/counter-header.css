@@ -6,11 +6,28 @@
     justify-content: space-between;
     font-size: 12px;
     line-height: 5px;
-    padding: 5px;
+    padding: 5px 30px ;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
 .header-container {
     color: #702525;
+}
+
+.header-counter{
+    display: flex;
+    flex-direction: column;
+    line-height: 0px;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+.ends-timer{
+    margin-top: 0px;
+}
+.timer{
+    font-size: 20px;
+    padding-top: 5px;
+    margin: 0;
 }
