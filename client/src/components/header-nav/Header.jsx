@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 import './header.css'
 import logoHades from '../../assets/images/logo1.jpg'
@@ -9,10 +9,12 @@ import mensVisual2 from '../../assets/images/mensVisual2.webp'
 import DropDownImage from "./dropdown-visuals-image/DropDownImage";
 
 export default function Header() {
+
+  const navigate = useNavigate();
   return <div className="header-container">
 
     <div className="logo-btns">
-        <img src={logoHades} alt="Hades logo loading..." />
+        <img onClick={() => navigate('/')} src={logoHades} alt="Hades logo loading..." />
 
         <div className="menu-item">
         <Link to='/catalog/women' style={{paddingLeft: '80px'}}>Women</Link>

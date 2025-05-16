@@ -24,6 +24,9 @@
     background: none;
     max-width: 80px;
 }
+.logo-btns img:hover{
+  cursor: pointer;
+}
 
 .search-cart {
     display: flex;
