@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router";
 import WomenMainCatalog from "./components/women-main-catalog/WomenMainCatalog.jsx";
 import Scroll from "./components/scroll-ontop/Scroll.jsx";
 import RedLine from "./components/home/red-line/RedLine.jsx";
+import MenMainCatalog from "./components/mens-main-catalog/MenMainCatalog.jsx";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/catalog/women" element={<WomenMainCatalog />}/>
+      <Route path="/catalog/men" element={<MenMainCatalog />}/>
 
       <Route path="*" element={<div>404 Not Found</div>} />
     </Routes>
