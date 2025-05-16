@@ -1,6 +1,6 @@
 
 
-.women-catalog-item{
+.catalog-item{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,20 +10,20 @@
     overflow: hidden;
     
 }
-.women-catalog-item img{
+.catalog-item img{
     width: 100%;
     transition: ease 0.2s;
 }
 
-.women-item-img img:hover{
+.item-img img:hover{
     transform: scale(1.1);
     cursor: pointer;
 }
 
-.women-catalog-item p{
+.catalog-item p{
     padding-left: 100px;
 }
-.women-catalog-item-p{
+.catalog-item-p{
     width: 100%;
     background-color: white;
 }

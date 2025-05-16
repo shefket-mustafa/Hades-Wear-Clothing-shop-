@@ -1,11 +1,11 @@
-import './womenCatalogItem.css'
+import './catalogItem.css'
 
-export default function WomenCatalogItem({product}) {
-  return <div className='women-catalog-item'>
-    <div className='women-item-img'>
+export default function CatalogItem({product}) {
+  return <div className='catalog-item'>
+    <div className='catalog-item-img'>
     <img src={product.images[0]} alt={product.title} />
     </div>
-    <div className='women-catalog-item-p'>
+    <div className='catalog-item-p'>
     <p style={{fontWeight: '300'}}>{product.title}</p>
     <p style={{fontWeight: '600'}}>{product.price}</p>
     </div>

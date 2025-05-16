@@ -1,11 +1,11 @@
-.men-main-catalog-sort-filter{
+.main-catalog-sort-filter{
     display: flex;
     gap: 100px;
     padding-left: 20px;
     justify-content: flex-start;
     align-items: flex-start; 
 }
-.men-catalog-items-container{
+.catalog-items-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
    place-items: center;
@@ -13,7 +13,7 @@
    padding: 20px;
    
 }
-.top-men-catalog h1{
+.top-catalog h1{
    padding-left: 20px;
 }
 
@@ -56,7 +56,7 @@
     font-size: 15px;
 }
 
-.men-main-catalog-sort-filter button{
+.main-catalog-sort-filter button{
     background-color: transparent;
     border: none;
     

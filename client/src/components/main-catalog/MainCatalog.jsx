@@ -1,26 +1,17 @@
-import { useEffect, useState } from 'react';
-import { useGetAllMensItems } from '../../api-hooks/api-hooks-men';
-import './menMainCatalog.css'
 
-import MenCatalogItem from './men-catalog-item/MenCatalogItem';
-
-export default function MenMainCatalog() {
-
-    const {getAllMensItems} = useGetAllMensItems();
-    const [allProducts, setAllProducts] = useState([]);
-
-    useEffect(() => {
-        getAllMensItems()
-        .then(items => setAllProducts(items))
-    },[]);
+import CatalogItem from './catalog-item/CatalogItem';
+import './mainCatalog.css'
 
 
-  return <div className="men-main-catalog">
+export default function MainCatalog({heading, allProducts}) {
 
-    <div className="top-men-catalog">
-        <h1>EVERYTHING A MAN NEEDS ✨</h1>
+
+  return <div className="main-catalog">
+
+    <div className="topcatalog">
+        <h1>EVERYTHING A {heading} NEEDS ✨</h1>
     </div>
-    <div className="men-main-catalog-sort-filter">
+    <div className="main-catalog-sort-filter">
 
         <div className="show-filters">
         <svg xmlns="http://www.w3.org/2000/svg" height='20px' fill="none" viewBox="0 0 24 24" strokeWidth={1.} stroke="currentColor" className="size-6">
@@ -43,8 +34,8 @@ export default function MenMainCatalog() {
 
     </div>
 
-    <div className='men-catalog-items-container'>
-        {allProducts.map(product => <MenCatalogItem key={product.id} product={product} />)}
+    <div className='catalog-items-container'>
+        {allProducts.map(product => <CatalogItem key={product.id} product={product} />)}
         </div>
 
   </div>;
