@@ -1,26 +1,19 @@
 
 import { useEffect, useState } from "react";
 import Bestsellers from "../bestsellers/Bestsellers";
-import { useGetAllWomensItems, useGetBestSellers } from "../../../api-hooks/api-hooks";
+import { useGetBestSellers } from "../../../api-hooks/api-hooks";
 
 export default function BestSellerContainer() {
 
     const [data, setData] = useState([]);
     const {getBestSellers} = useGetBestSellers();
-    const {getAllWomenItems} = useGetAllWomensItems();
+    
 
     useEffect(() => {
         getBestSellers()
         .then(products => {
             setData(products)
             
-        });
-    },[])
-
-    useEffect(() => {
-        getAllWomenItems()
-        .then(products => {
-            console.log(products);
         });
     },[])
 
