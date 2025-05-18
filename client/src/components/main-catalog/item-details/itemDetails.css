@@ -33,17 +33,15 @@
     max-width: 200px;
     display: flex;
     flex-direction: column;
-    
-    gap: 10px;
-    
+    gap: 10px;   
 }
+
 .right-details-container img{
     object-fit: cover;
     display: block;
     width: 100%;
     height: 50%; 
     background-color: rgb(245, 245, 245);
-
 }
 
 .right-details-tab{
@@ -52,5 +50,129 @@
     align-items: flex-start;
     padding-left: 80px;
     flex: 1;
+    
 }
+
+.details-title{
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.details-price{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.right-details-shipping{
+    line-height: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.right-details-shipping-cont{
+    background-color: #4e6866;
+}
+.right-details-shipping-cont p{
+    padding: 0px 5px;
+    color: white;
+}
+.right-details-free-shipping{
+    font-size: 11px;
+}
+
+.right-details-first-break{
+    width: 100%;
+    background-color: black;
+    margin-top: 25px;
+}
+.details-sku{
+    font-size: 10px;
+    color: darkgray;
+}
+
+.right-details-size-add-freesh{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.right-details-sizes{
+    display: flex;
+    gap: 10px;
+}
+.right-details-sizes button{
+    padding: 15px 20px;
+    background-color: transparent;
+    border-width: 1px;
+    border-color: darkgray;
+    border-style: solid;
+}
+.right-details-sizes button:hover{
+    cursor: pointer;
+}
+
+.add-to-cart{
+    padding: 15px 20px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: none;
+}
+.add-to-cart:hover{
+    cursor: pointer;
+}
+
+.for-my-mum {
+    gap: 35px;
+    display: flex;
+    background-color: #702525;
+    font-size: 15px;
+    padding: 10px 15px;
+    color: white;
+    } 
+
+    .right-tab-share{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: rgb(113, 113, 113);
+    }
+    .right-tab-share svg {
+        color: rgb(113, 113, 113);
+        margin: 0 8px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      .right-tab-share svg:hover {
+        transform: scale(1.2);
+      }
+
+      .details-description-title{
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .details-description{
+        font-family: sans-serif;
+        font-size: 13px;
+      }
+
+      .details-dimensions{
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+      }
+
+      .details-dimensions-conts p{
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+
+      .details-availability-info{
+        font-family: sans-serif;
+        font-size: 14px;
+      }
 
