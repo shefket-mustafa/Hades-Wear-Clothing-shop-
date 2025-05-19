@@ -103,11 +103,9 @@
     gap: 10px;
 }
 .right-details-sizes button{
-    padding: 15px 20px;
-    background-color: transparent;
-    border-width: 1px;
-    border-color: darkgray;
-    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .right-details-sizes button:hover{
     cursor: pointer;
@@ -155,10 +153,17 @@
         font-weight: 600;
       }
 
+      .right-tab-description:hover{
+        cursor: pointer;
+      }
       .details-description{
         font-family: sans-serif;
         font-size: 13px;
+        min-height: 80px;
+        transition: opacity 0.2s ease;
+        opacity: 1;
       }
+
 
       .details-dimensions{
         display: flex;
@@ -175,4 +180,79 @@
         font-family: sans-serif;
         font-size: 14px;
       }
+      .description-title-container{
+        display: flex;
+        justify-content: space-between;
+        padding-right: 15px;
+        min-width: 576px;
+      }
+      .arrow{
+        transition: ease 0.2s;
+      }
+      .arrow.open{
+        transform: rotate(180deg);
+      }
+      .details-description{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+
+      .details-dropdown-content,
+      .dimensions-dropdown-content,
+      .availability-dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      .details-dropdown-content.open,
+    .dimensions-dropdown-content.open,
+    .availability-dropdown-content.open {
+    max-height: 200px; 
+    opacity: 1;
+    }
+    .dimensions-dropdown-content{
+    display: flex;
+    gap: 35px;
+    }
+
+    .dimensions-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 576px;
+    cursor: pointer;
+    }
+    .dimensions-title-container:hover{
+        cursor: pointer;
+      }
+
+      .availability-title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 576px;
+        cursor: pointer;
+      }
+
+      .size-btn,
+      .active-size-btn {
+        padding: 15px 20px;
+        background-color: transparent;
+        border: 3px solid darkgray;
+        transition: all 0.1s ease;
+        box-sizing: border-box; 
+        width: 60px; 
+        height: 50px;
+      }
+
+      .active-size-btn{
+        border: 3px solid black;
+      }
+
+
+      
 

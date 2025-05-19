@@ -13,8 +13,9 @@
    padding: 20px;
    
 }
-.top-catalog h1{
-   padding-left: 20px;
+.topcatalog h1{
+   margin-left: 50%;
+   transform: translateX(-50%);
 }
 
  .sort{

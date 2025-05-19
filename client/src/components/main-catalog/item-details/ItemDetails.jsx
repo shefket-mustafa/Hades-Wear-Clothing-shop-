@@ -5,8 +5,28 @@ import "./itemDetails.css";
 
 export default function ItemDetails() {
   const [productDetails, setProductDetails] = useState({});
+  const [descriptionClicked, setDescriptionClicked] = useState(true);
+  const [availabilityClicked, setavAilabilityClicked] = useState(false);
+  const [dimensionsClicked, setDimensionsClicked] = useState(false);
+  const [sizeButtonClicked, setSizeButtonClicked] = useState('');
   const { getProductById } = useGetProductById();
   const { id } = useParams();
+
+  const descriptionSetter = () =>{
+    setDescriptionClicked( prev => !prev);
+  }
+
+  const availabilitySetter = () =>{
+    setavAilabilityClicked( prev => !prev);
+  }
+
+  const dimensionsSetter = () =>{
+    setDimensionsClicked( prev => !prev);
+  }
+
+  const sizeButtonChosen = (size) => {
+    setSizeButtonClicked(size);
+  };
 
   useEffect(() => {
     getProductById(id).then((productDetails) => {
@@ -56,11 +76,11 @@ export default function ItemDetails() {
           <span>Size</span>
 
           <div className="right-details-sizes">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
-            <button>XXL</button>
+    <button onClick={()=>setSizeButtonClicked('S')} className={sizeButtonClicked === 'S' ? 'active-size-btn' : 'size-btn'}>S</button>
+    <button onClick={()=>setSizeButtonClicked('M')} className={sizeButtonClicked === 'M' ? 'active-size-btn' : 'size-btn'}>M</button>
+    <button onClick={()=>setSizeButtonClicked('L')} className={sizeButtonClicked === 'L' ? 'active-size-btn' : 'size-btn'}>L</button>
+    <button onClick={()=>setSizeButtonClicked('XL')} className={sizeButtonClicked === 'XL' ? 'active-size-btn' : 'size-btn'}>XL</button>
+    <button onClick={()=>setSizeButtonClicked('XXL')} className={sizeButtonClicked === 'XXL' ? 'active-size-btn' : 'size-btn'}>XXL</button>
           </div>
 
           <div className="add-to-cart-container">
@@ -116,23 +136,33 @@ export default function ItemDetails() {
 
         <hr className="right-details-first-break" />
 
-        <div className="right-tab-description">
-          <p className="details-description-title">Description</p>
-
-        <div className="details-description">
-
-          {productDetails.description}
-        </div>
-
+        <div className="right-tab-description" >
+            <div className="description-title-container" onClick={descriptionSetter}>
+          <p  className="details-description-title">Description</p>
+          <svg className={`arrow ${descriptionClicked ? "open" : ""}`} xmlns="http://www.w3.org/2000/svg" width='20px' fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+            </svg>
+            </div>
+             
+            
+            <div className={`details-dropdown-content ${descriptionClicked ? "open" : ""}`}>
+                {descriptionClicked ? 
+                <div className="details-description-div">{productDetails.description}</div> : ''}
+             </div>  
         </div>
 
         <hr className="right-details-first-break" />
 
-        <div className="right-tab-dimensions">
+        <div className="right-tab-dimensions" >
+            <div className="dimensions-title-container" onClick={dimensionsSetter}>
           <p className="details-description-title">Dimensions</p>
+          <svg className={`arrow ${dimensionsClicked ? "open" : ""}`} xmlns="http://www.w3.org/2000/svg" width='20px' fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+            </svg>
+            </div>
+        <div className={`dimensions-dropdown-content ${dimensionsClicked ? "open" : ""}`}>
 
         <div className="details-dimensions">
-
           <div className="details-dimensions-conts">
           <p>Width</p>
           {productDetails.dimensions?.width}
@@ -148,18 +178,26 @@ export default function ItemDetails() {
           {productDetails.dimensions?.depth}
           </div>
         </div>
-
+        </div>
         </div>
 
         <hr className="right-details-first-break" />
 
         <div className="details-availability">
-        <p className="details-description-title">Availability</p>
+  <div className="availability-title-container" onClick={availabilitySetter}>
+    <p className="details-description-title">Availability</p>
+    <svg className={`arrow ${availabilityClicked ? "open" : ""}`} xmlns="http://www.w3.org/2000/svg" width='20px' fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+    </svg>
+  </div>
 
-        <div className="details-availability-info">
-        {productDetails.availabilityStatus}
-        </div>
-        </div>
+  <div className={`availability-dropdown-content ${availabilityClicked ? "open" : ""}`}>
+    <div className="details-availability-info">
+      {productDetails.availabilityStatus}
+    </div>
+  </div>
+</div>
+
 
       </div>
     </div>
