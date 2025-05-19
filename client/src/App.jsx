@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { useGetAllMensItems } from "./api-hooks/api-hooks-men.js";
 import ItemDetails from "./components/main-catalog/item-details/ItemDetails.jsx";
 import NotFound from "./components/not-found/NotFound.jsx";
+import Register from "./components/auth/register/Register.jsx";
 
 
 
@@ -43,6 +44,8 @@ function App() {
       <Route path="/catalog/women" element={<MainCatalog heading='WOMEN' allProducts={allWomenProducts}/>}/>
       <Route path="/catalog/men" element={<MainCatalog heading='MEN' allProducts={allMenProducts}/>}/>
       <Route path="/catalog/:id/details" element={<ItemDetails/>}/>
+      <Route path="/register" element={<Register/>}/>
+
 
       <Route path="*" element={<NotFound />} />
     </Routes>
