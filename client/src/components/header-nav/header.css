@@ -87,19 +87,18 @@
     justify-content: space-between;
   }
 
-  /* Step 1: Default hidden state for dropdown columns */
+
 .menu-item .dropdown > div {
   opacity: 0;
   transform: translateX(-20px);
   transition: opacity 0.4s ease, transform 0.8s ease;
 }
 
-/* Step 2: When dropdown is shown, animate them in */
+
 .menu-item:hover .dropdown > div {
   opacity: 1;
   transform: translateX(0);
 }
-
 .menu-item .dropdown > div:nth-child(1) {
   transition-delay: 0s;
 }

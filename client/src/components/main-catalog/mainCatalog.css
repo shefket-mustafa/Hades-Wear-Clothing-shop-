@@ -16,6 +16,7 @@
 .topcatalog h1{
    margin-left: 50%;
    transform: translateX(-50%);
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
  .sort{

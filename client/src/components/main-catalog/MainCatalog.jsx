@@ -9,7 +9,8 @@ export default function MainCatalog({heading, allProducts}) {
   return <div className="main-catalog">
 
     <div className="topcatalog">
-        <h1>EVERYTHING A {heading} NEEDS ✨</h1>
+        {/* <h1>EVERYTHING {heading} WOULD NEED ✨</h1> */}
+        <hr className="right-details-first-break" />
     </div>
     <div className="main-catalog-sort-filter">
 
