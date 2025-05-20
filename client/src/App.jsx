@@ -12,7 +12,7 @@ import { useGetAllMensItems } from "./api-hooks/api-hooks-men.js";
 import ItemDetails from "./components/main-catalog/item-details/ItemDetails.jsx";
 import NotFound from "./components/not-found/NotFound.jsx";
 import Register from "./components/auth/register/Register.jsx";
-import { useGetSunglasses } from "./api-hooks/api-hooks.js";
+import { useGetSkincareAndFragrances, useGetSunglasses } from "./api-hooks/api-hooks.js";
 
 
 
@@ -21,9 +21,13 @@ function App() {
   const {getAllWomenItems} = useGetAllWomensItems();
   const {getAllMensItems} = useGetAllMensItems();
   const {getSunglasses} = useGetSunglasses();
+  const {getSkincareAndFrangrances} = useGetSkincareAndFragrances();
+
   const [allWomenProducts, setAllWomenProducts] = useState([]);
   const [allMenProducts, setAllMenProducts] = useState([]);
   const [allSunglasses, setAllSunglasses] = useState([]);
+  const [allSkincareAndFragrance, setAllSkincareAndFragrance] = useState([]);
+  
 
   useEffect(() => {
       getAllWomenItems()
@@ -39,6 +43,12 @@ useEffect(() => {
   .then(sunglasses => setAllSunglasses(sunglasses))
 },[]);
 
+useEffect(() => {
+  getSkincareAndFrangrances()
+  .then(products => {
+    console.log(products);
+    setAllSkincareAndFragrance(products)})
+},[]);
 
 
   return (
@@ -51,6 +61,15 @@ useEffect(() => {
       <Route path="/" element={<Home />}/>
       <Route path="/catalog/women" element={<MainCatalog allProducts={allWomenProducts}/>}/>
       <Route path="/catalog/womens-accessoaries-sunglasses" element={<MainCatalog  allProducts={allSunglasses}/>}/>
+      <Route path="/catalog/womens-dresses" element={<MainCatalog  allProducts={allWomenProducts.filter(product => product.category?.endsWith('dresses'))}/>}/>
+      <Route path="/catalog/womens-shoes" element={<MainCatalog  allProducts={allWomenProducts.filter(product => product.category?.endsWith('shoes'))}/>}/>
+      <Route path="/catalog/womens-bags" element={<MainCatalog  allProducts={allWomenProducts.filter(product => product.category?.endsWith('bags'))}/>}/>
+      <Route path="/catalog/womens-watches" element={<MainCatalog  allProducts={allWomenProducts.filter(product => product.category?.endsWith('watches'))}/>}/>
+      <Route path="/catalog/womens-jewellery" element={<MainCatalog  allProducts={allWomenProducts.filter(product => product.category?.endsWith('jewellery'))}/>}/>
+      <Route path="/catalog/womens-sunglasses" element={<MainCatalog  allProducts={allSunglasses}/>}/>
+      <Route path="/catalog/womens-fragrances" element={<MainCatalog  allProducts={allSkincareAndFragrance.filter(product => product.category?.endsWith('fragrances'))}/>}/>
+      <Route path="/catalog/womens-skincare" element={<MainCatalog  allProducts={allSkincareAndFragrance.filter(product => product.category?.endsWith('skincare'))}/>}/>
+
       <Route path="/catalog/men" element={<MainCatalog  allProducts={allMenProducts}/>}/>
       <Route path="/catalog/mens-accessoaries-sunglasses" element={<MainCatalog  allProducts={allSunglasses}/>}/>
       

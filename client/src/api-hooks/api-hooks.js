@@ -46,7 +46,6 @@ export const useGetSunglasses = () => {
 
     try{
       const response = await api.get('/products/category/sunglasses');
-      console.log(response.data);
       return response.data.products;
 
     }catch(err){
@@ -55,6 +54,30 @@ export const useGetSunglasses = () => {
     }
   }
   return {getSunglasses}
+};
+
+export const useGetSkincareAndFragrances = () => {
+
+  const getSkincareAndFrangrances = async() => {
+
+    try{
+
+      const fragrances = await api.get(`/products/category/fragrances`);
+      const skincare = await api.get(`/products/category/skincare`);
+      
+      const response = await Promise.all([fragrances, skincare]);
+      
+      const products = response.flatMap(res => res.data.products);
+      console.log(products);
+      return products;
+
+    }catch(err){
+      console.error('Couldn`t fetch products!: '+err.message)
+      return [];
+    }
+  }
+
+  return {getSkincareAndFrangrances}
 };
 
 
