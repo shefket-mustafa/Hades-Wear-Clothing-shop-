@@ -63,3 +63,27 @@
     border: none;
     
 }
+
+.empty-catalog {
+   text-align: center;
+   padding: 2rem;
+ }
+
+ .empty-catalog a{
+   text-decoration: none;
+   margin-top: 20px;
+    padding: 10px;
+    background-color: #4e6866;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+ 
+ }
+ 
+ .pug-image {
+   max-width: 570px;
+   margin-bottom: 1rem;
+   min-height: 30vh
+ }

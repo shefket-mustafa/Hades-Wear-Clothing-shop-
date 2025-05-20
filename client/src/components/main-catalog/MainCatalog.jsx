@@ -1,6 +1,8 @@
 
 import CatalogItem from './catalog-item/CatalogItem';
 import './mainCatalog.css'
+import pugImg from '../../assets/images/error-404.jpg'
+import { Link } from 'react-router';
 
 
 export default function MainCatalog({allProducts}) {
@@ -36,7 +38,20 @@ export default function MainCatalog({allProducts}) {
     </div>
 
     <div className='catalog-items-container'>
-        {allProducts.map(product => <CatalogItem key={product.id} product={product} />)}
+
+        {allProducts.length === 0 ? (
+        <div className='empty-catalog'>
+            <img src={pugImg} alt="Pug ran away" className="pug-image" />
+            <h2>Oops! Our pug has eaten all the products and ran away!</h2>
+            <p>Try checking back later or explore another category.</p>
+            <Link to='/'>Home Page</Link>
+        </div>) : (
+            allProducts.map(product => <CatalogItem key={product.id} product={product} />)
+        )
+    }
+        
+
+
         </div>
 
   </div>;
