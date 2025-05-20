@@ -22,29 +22,29 @@ export default function Header() {
         <div className="dropdown">
           <div className="dropdown-clothing">
             <h1>CLOTHING</h1>
-            <Link to='/category/womens-shirts'>WOMENS SHIRTS</Link>
-            <Link to='/category/womens-dresses'>WOMENS DRESSES</Link>
+            <Link to='/catalog/womens-shirts'>WOMENS SHIRTS</Link>
+            <Link to='/catalog/womens-dresses'>WOMENS DRESSES</Link>
           </div>
 
           <div className="dropdown-shoes">
             <h1>SHOES</h1>
-          <Link to='/category/womens-shoes'>WOMENS SHOES</Link>
+          <Link to='/catalog/womens-shoes'>WOMENS SHOES</Link>
           </div>
 
           <div className="dropdown-accessoaries">
             <h1>ACCESOARIES</h1>
-          <Link to='/category/womens-bags'>WOMENS BAGS</Link>
-          <Link to='/category/womens-watches'>WOMENS WATCHES</Link>
-          <Link to='/category/womens-jewellery'>WOMENS JEWELLERY</Link>
-          <Link to='/category/womens-accessoaries-sunglasses'>WOMENS SUNGLASSES</Link>
-          <Link to='/category/womens-skincare'>SKINCARE</Link>
-          <Link to='/category/womens-fragrances'>WOMENS FRAGRANCES</Link>
+          <Link to='/catalog/womens-bags'>WOMENS BAGS</Link>
+          <Link to='/catalog/womens-watches'>WOMENS WATCHES</Link>
+          <Link to='/catalog/womens-jewellery'>WOMENS JEWELLERY</Link>
+          <Link to='/catalog/womens-accessoaries-sunglasses'>WOMENS SUNGLASSES</Link>
+          <Link to='/catalog/womens-skincare'>SKINCARE</Link>
+          <Link to='/catalog/womens-fragrances'>WOMENS FRAGRANCES</Link>
           </div>
 
           <div className="dropdown-tech">
             <h1>TECH</h1>
-          <Link to='/category/womens-laptops'>LAPTOPS</Link>
-          <Link to='/category/womens-smartphones'>SMARTPHONES</Link>
+          <Link to='/catalog/womens-laptops'>LAPTOPS</Link>
+          <Link to='/catalog/womens-smartphones'>SMARTPHONES</Link>
           </div>
 
           <div className="dropdown-image">
@@ -60,26 +60,26 @@ export default function Header() {
         <div className="dropdown">
         <div className="dropdown-mens-clothing">
             <h1>CLOTHING</h1>
-            <Link to='/category/womens-shirts'>MENS SHIRTS</Link>
+            <Link to='/catalog/womens-shirts'>MENS SHIRTS</Link>
           </div>
         
 
         <div className="dropdown-mens-shoes">
             <h1>SHOES</h1>
-          <Link to='/category/mens-shoes'>MENS SHOES</Link>
+          <Link to='/catalog/mens-shoes'>MENS SHOES</Link>
           </div>
 
           <div className="dropdown-mens-acessoaries">
             <h1>ACCESOARIES</h1>
-          <Link to='/category/mens-accessoaries'>MENS WATCHES</Link>
-          <Link to='/category/mens-accessoaries-sunglasses'>MENS SUNGLASSES</Link>
-          <Link to='/category/mens-accessoaries-fragrances'>MENS FRAGRANCES</Link>
+          <Link to='/catalog/mens-accessoaries'>MENS WATCHES</Link>
+          <Link to='/catalog/mens-accessoaries-sunglasses'>MENS SUNGLASSES</Link>
+          <Link to='/catalog/mens-accessoaries-fragrances'>MENS FRAGRANCES</Link>
           </div>
 
           <div className="dropdown-tech">
             <h1>TECH</h1>
-          <Link to='/category/mens-laptops'>LAPTOPS</Link>
-          <Link to='/category/mens-smartphones'>SMARTPHONES</Link>
+          <Link to='/catalog/mens-laptops'>LAPTOPS</Link>
+          <Link to='/catalog/mens-smartphones'>SMARTPHONES</Link>
           </div>
 
           <div className="dropdown-image">

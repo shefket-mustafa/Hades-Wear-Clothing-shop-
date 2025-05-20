@@ -3,7 +3,7 @@ import CatalogItem from './catalog-item/CatalogItem';
 import './mainCatalog.css'
 
 
-export default function MainCatalog({heading, allProducts}) {
+export default function MainCatalog({allProducts}) {
 
 
   return <div className="main-catalog">

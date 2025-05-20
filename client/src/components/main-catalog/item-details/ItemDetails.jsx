@@ -76,11 +76,19 @@ export default function ItemDetails() {
           <span>Size</span>
 
           <div className="right-details-sizes">
-    <button onClick={()=>setSizeButtonClicked('S')} className={sizeButtonClicked === 'S' ? 'active-size-btn' : 'size-btn'}>S</button>
-    <button onClick={()=>setSizeButtonClicked('M')} className={sizeButtonClicked === 'M' ? 'active-size-btn' : 'size-btn'}>M</button>
-    <button onClick={()=>setSizeButtonClicked('L')} className={sizeButtonClicked === 'L' ? 'active-size-btn' : 'size-btn'}>L</button>
-    <button onClick={()=>setSizeButtonClicked('XL')} className={sizeButtonClicked === 'XL' ? 'active-size-btn' : 'size-btn'}>XL</button>
-    <button onClick={()=>setSizeButtonClicked('XXL')} className={sizeButtonClicked === 'XXL' ? 'active-size-btn' : 'size-btn'}>XXL</button>
+          {productDetails.category?.startsWith('sunglasses') ?  
+          
+          (<button onClick={()=>setSizeButtonClicked('OS')} className={sizeButtonClicked === 'OS' ? 'active-size-btn' : 'size-btn'}>OS</button>)
+        :
+        <>
+        <button onClick={()=>setSizeButtonClicked('S')} className={sizeButtonClicked === 'S' ? 'active-size-btn' : 'size-btn'}>S</button>
+        <button onClick={()=>setSizeButtonClicked('M')} className={sizeButtonClicked === 'M' ? 'active-size-btn' : 'size-btn'}>M</button>
+        <button onClick={()=>setSizeButtonClicked('L')} className={sizeButtonClicked === 'L' ? 'active-size-btn' : 'size-btn'}>L</button>
+        <button onClick={()=>setSizeButtonClicked('XL')} className={sizeButtonClicked === 'XL' ? 'active-size-btn' : 'size-btn'}>XL</button>
+        <button onClick={()=>setSizeButtonClicked('XXL')} className={sizeButtonClicked === 'XXL' ? 'active-size-btn' : 'size-btn'}>XXL</button>
+        </>
+        }
+
           </div>
 
           <div className="add-to-cart-container">
