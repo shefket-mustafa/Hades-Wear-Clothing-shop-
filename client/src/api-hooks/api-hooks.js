@@ -40,6 +40,23 @@ export const useGetProductById = () => {
   return {getProductById}
 }
 
+export const useGetSunglasses = () => {
+  
+  const getSunglasses = async () => {
+
+    try{
+      const response = await api.get('/products/category/sunglasses');
+      console.log(response.data);
+      return response.data.products;
+
+    }catch(err){
+      console.error("Failed to fetch sunglasses: "+err.message)
+      return[];
+    }
+  }
+  return {getSunglasses}
+};
+
 
 
 

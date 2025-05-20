@@ -12,6 +12,7 @@ import { useGetAllMensItems } from "./api-hooks/api-hooks-men.js";
 import ItemDetails from "./components/main-catalog/item-details/ItemDetails.jsx";
 import NotFound from "./components/not-found/NotFound.jsx";
 import Register from "./components/auth/register/Register.jsx";
+import { useGetSunglasses } from "./api-hooks/api-hooks.js";
 
 
 
@@ -19,8 +20,10 @@ function App() {
 
   const {getAllWomenItems} = useGetAllWomensItems();
   const {getAllMensItems} = useGetAllMensItems();
+  const {getSunglasses} = useGetSunglasses();
   const [allWomenProducts, setAllWomenProducts] = useState([]);
   const [allMenProducts, setAllMenProducts] = useState([]);
+  const [allSunglasses, setAllSunglasses] = useState([]);
 
   useEffect(() => {
       getAllWomenItems()
@@ -29,6 +32,11 @@ function App() {
   useEffect(() => {
     getAllMensItems()
     .then(items => setAllMenProducts(items))
+},[]);
+
+useEffect(() => {
+  getSunglasses()
+  .then(sunglasses => setAllSunglasses(sunglasses))
 },[]);
 
 
@@ -41,9 +49,14 @@ function App() {
 
     <Routes>
       <Route path="/" element={<Home />}/>
-      <Route path="/catalog/women" element={<MainCatalog heading='WOMEN' allProducts={allWomenProducts}/>}/>
-      <Route path="/catalog/men" element={<MainCatalog heading='MEN' allProducts={allMenProducts}/>}/>
+      <Route path="/catalog/women" element={<MainCatalog allProducts={allWomenProducts}/>}/>
+      <Route path="/catalog/womens-accessoaries-sunglasses" element={<MainCatalog  allProducts={allSunglasses}/>}/>
+      <Route path="/catalog/men" element={<MainCatalog  allProducts={allMenProducts}/>}/>
+      <Route path="/catalog/mens-accessoaries-sunglasses" element={<MainCatalog  allProducts={allSunglasses}/>}/>
+      
       <Route path="/catalog/:id/details" element={<ItemDetails/>}/>
+
+
       <Route path="/register" element={<Register/>}/>
 
 
