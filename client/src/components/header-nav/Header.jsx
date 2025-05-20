@@ -22,7 +22,6 @@ export default function Header() {
         <div className="dropdown">
           <div className="dropdown-clothing">
             <h1>CLOTHING</h1>
-            <Link to='/catalog/womens-shirts'>WOMENS SHIRTS</Link>
             <Link to='/catalog/womens-dresses'>WOMENS DRESSES</Link>
           </div>
 
