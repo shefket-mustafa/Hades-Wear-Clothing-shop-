@@ -12,7 +12,7 @@ import { useGetAllMensItems } from "./api-hooks/api-hooks-men.js";
 import ItemDetails from "./components/main-catalog/item-details/ItemDetails.jsx";
 import NotFound from "./components/not-found/NotFound.jsx";
 import Register from "./components/auth/register/Register.jsx";
-import { useGetSkincareAndFragrances, useGetSunglasses } from "./api-hooks/api-hooks.js";
+import { useGetLaptopsAndPhones, useGetSkincareAndFragrances, useGetSunglasses } from "./api-hooks/api-hooks.js";
 
 
 
@@ -22,11 +22,13 @@ function App() {
   const {getAllMensItems} = useGetAllMensItems();
   const {getSunglasses} = useGetSunglasses();
   const {getSkincareAndFrangrances} = useGetSkincareAndFragrances();
+  const {getLaptopsAndPhones} = useGetLaptopsAndPhones();
 
   const [allWomenProducts, setAllWomenProducts] = useState([]);
   const [allMenProducts, setAllMenProducts] = useState([]);
   const [allSunglasses, setAllSunglasses] = useState([]);
   const [allSkincareAndFragrance, setAllSkincareAndFragrance] = useState([]);
+  const [allLaptopsAndSmartPhones, setAllLaptopsAndSmartPhones] = useState([]);
   
 
   useEffect(() => {
@@ -46,9 +48,17 @@ useEffect(() => {
 useEffect(() => {
   getSkincareAndFrangrances()
   .then(products => {
-    console.log(products);
     setAllSkincareAndFragrance(products)})
 },[]);
+
+useEffect(() => {
+  getLaptopsAndPhones()
+  .then(products => {
+    console.log(products);
+    setAllLaptopsAndSmartPhones(products)})
+},[]);
+
+
 
 
   return (
@@ -69,10 +79,16 @@ useEffect(() => {
       <Route path="/catalog/womens-sunglasses" element={<MainCatalog  allProducts={allSunglasses}/>}/>
       <Route path="/catalog/womens-fragrances" element={<MainCatalog  allProducts={allSkincareAndFragrance.filter(product => product.category?.endsWith('fragrances'))}/>}/>
       <Route path="/catalog/womens-skincare" element={<MainCatalog  allProducts={allSkincareAndFragrance.filter(product => product.category?.endsWith('skincare'))}/>}/>
+      <Route path="/catalog/womens-laptops" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('laptops'))}/>}/>
+      <Route path="/catalog/womens-smartphones" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('smartphones'))}/>}/>
 
       <Route path="/catalog/men" element={<MainCatalog  allProducts={allMenProducts}/>}/>
       <Route path="/catalog/mens-accessoaries-sunglasses" element={<MainCatalog  allProducts={allSunglasses}/>}/>
-      
+      <Route path="/catalog/mens-shirts" element={<MainCatalog  allProducts={allMenProducts.filter(product => product.category?.endsWith('shirts'))}/>}/>
+      <Route path="/catalog/mens-shoes" element={<MainCatalog  allProducts={allMenProducts.filter(product => product.category?.endsWith('shoes'))}/>}/>
+      <Route path="/catalog/mens-watches" element={<MainCatalog  allProducts={allMenProducts.filter(product => product.category?.endsWith('watches'))}/>}/>
+      <Route path="/catalog/mens-fragrances" element={<MainCatalog  allProducts={allSkincareAndFragrance.filter(product => product.category?.endsWith('fragrances'))}/>}/>
+
       <Route path="/catalog/:id/details" element={<ItemDetails/>}/>
 
 

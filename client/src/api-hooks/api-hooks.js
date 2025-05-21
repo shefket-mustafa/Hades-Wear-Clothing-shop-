@@ -68,7 +68,6 @@ export const useGetSkincareAndFragrances = () => {
       const response = await Promise.all([fragrances, skincare]);
       
       const products = response.flatMap(res => res.data.products);
-      console.log(products);
       return products;
 
     }catch(err){
@@ -80,6 +79,28 @@ export const useGetSkincareAndFragrances = () => {
   return {getSkincareAndFrangrances}
 };
 
+export const useGetLaptopsAndPhones = () => {
+
+  const getLaptopsAndPhones = async () => {
+
+    try{
+      const laptops = await api.get(`/products/category/laptops`);
+      const smartphones = await api.get(`/products/category/smartphones`);
+
+      console.log(laptops.data.products);
+      console.log(smartphones.data.products);
+
+      const products = Promise.all([laptops,smartphones]);
+      const response = (await products).flatMap(res => res.data.products);
+      return response;
+
+    }catch(err){
+      console.error('Failed to fetch tech: '+err.message);
+      return[]
+    }
+  }
+  return {getLaptopsAndPhones}
+}
 
 
 

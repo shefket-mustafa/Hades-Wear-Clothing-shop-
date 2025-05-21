@@ -59,7 +59,7 @@ export default function Header() {
         <div className="dropdown">
         <div className="dropdown-mens-clothing">
             <h1>CLOTHING</h1>
-            <Link to='/catalog/womens-shirts'>MENS SHIRTS</Link>
+            <Link to='/catalog/mens-shirts'>MENS SHIRTS</Link>
           </div>
         
 
