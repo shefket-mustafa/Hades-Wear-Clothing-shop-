@@ -47,8 +47,8 @@ export default function Header() {
           </div>
 
           <div className="dropdown-image">
-            <DropDownImage image={dropVisual} title='EYEWEAR'/>
-            <DropDownImage image={dropVisual2} title='FOOTWEAR'/>
+            <Link to='/catalog/womens-accessoaries-sunglasses'><DropDownImage image={dropVisual} title='EYEWEAR'/></Link>
+            <Link to='/catalog/womens-shoes'><DropDownImage image={dropVisual2} title='FOOTWEAR'/></Link>
           </div>
         </div>
         </div>
@@ -70,9 +70,9 @@ export default function Header() {
 
           <div className="dropdown-mens-acessoaries">
             <h1>ACCESOARIES</h1>
-          <Link to='/catalog/mens-accessoaries'>MENS WATCHES</Link>
+          <Link to='/catalog/mens-watches'>MENS WATCHES</Link>
           <Link to='/catalog/mens-accessoaries-sunglasses'>MENS SUNGLASSES</Link>
-          <Link to='/catalog/mens-accessoaries-fragrances'>MENS FRAGRANCES</Link>
+          <Link to='/catalog/mens-fragrances'>MENS FRAGRANCES</Link>
           </div>
 
           <div className="dropdown-tech">
@@ -82,8 +82,8 @@ export default function Header() {
           </div>
 
           <div className="dropdown-image">
-            <DropDownImage image={mensVisual} title='EYEWEAR'/>
-            <DropDownImage image={mensVisual2} title='WATCHES'/>
+            <Link to='/catalog/mens-accessoaries-sunglasses'><DropDownImage image={mensVisual} title='EYEWEAR'/></Link>
+            <Link to='/catalog/mens-watches'><DropDownImage image={mensVisual2} title='WATCHES'/></Link>
           </div>
 
           
