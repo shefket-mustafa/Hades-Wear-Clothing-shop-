@@ -7,7 +7,7 @@ export default function MiddleContainer() {
   <img src={leftMidImg} alt="Left img" />
   <img src={rightMigImg} alt="Right img" />
 
-  <Link className='mid-left-women-eyewear'>WOMENS EYEWEAR</Link>
-  <Link className='mid-right-mens-eyewear'>MENS EYEWEAR</Link>
+  <Link to='/catalog/womens-accessoaries-sunglasses' className='mid-left-women-eyewear'>WOMENS EYEWEAR</Link>
+  <Link to='/catalog/mens-accessoaries-sunglasses' className='mid-right-mens-eyewear'>MENS EYEWEAR</Link>
 </div>;
 }

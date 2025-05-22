@@ -7,9 +7,10 @@ export default function ViewCollections() {
     alignItems:'center',
     lineHeight:'40px',
     paddingTop: '30px',
+    gap: '15px'
 
     }} className="view-collections-conteiner">
-            <Link 
+            <Link to='/catalog/women'
             style={{ 
             
             fontFamily:'sans-serif',
@@ -19,7 +20,19 @@ export default function ViewCollections() {
             alignSelf:'center',
             maxWidth:'300px',
             padding: '10px 35px'
-            }}>VIEW COLLECTION</Link>
+            }}>VIEW WOMENS COLLECTION</Link>
+
+<Link  Link to='/catalog/men'
+            style={{ 
+            
+            fontFamily:'sans-serif',
+            textDecoration:'none',
+            color:'white',
+            backgroundColor:'black',
+            alignSelf:'center',
+            maxWidth:'300px',
+            padding: '10px 35px'
+            }}>VIEW MENS COLLECTION</Link>
         </div>;
 
     

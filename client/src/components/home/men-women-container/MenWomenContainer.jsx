@@ -6,7 +6,7 @@ export default function MenWomenContainer() {
   return <div className="men-women-container">
     <img  src={menWomenImg} alt="Loading image..." />
 
-    <Link className='women-men-women-a'>WOMENS CLOTHING</Link>
-    <Link className='women-men-men-a'>MENS CLOTHING</Link>
+    <Link to='/catalog/womens-dresses' className='women-men-women-a'>WOMENS CLOTHING</Link>
+    <Link to='/catalog/mens-shirts' className='women-men-men-a'>MENS CLOTHING</Link>
   </div>;
 }
