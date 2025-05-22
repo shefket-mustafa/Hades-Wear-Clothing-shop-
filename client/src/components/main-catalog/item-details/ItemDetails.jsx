@@ -34,6 +34,28 @@ export default function ItemDetails() {
     });
   }, [productDetails, getProductById, id]);
 
+  let sizeButtons = [];
+
+  const category = productDetails.category?.toLowerCase() || '';
+
+  if(category.endsWith('sunglasses')){
+    sizeButtons = ['OS']
+  } else if(category.endsWith('watches')){
+    sizeButtons = ['38mm','40mm','42mm'];
+  } else if(category.endsWith('fragrances')){
+    sizeButtons = ['50ml','75ml','100ml']
+  } else if (category.endsWith('laptops')){
+    sizeButtons = ['13"', '14"', '15"', '17"'];
+  } else if (category.endsWith('womens-shoes')){
+    sizeButtons = ['35','36','37','38','39', '40']
+  } else if (category.endsWith('mens-shoes')){
+    sizeButtons = ['39', '40', '41', '42', '43', '44'];
+  } else if (category.endsWith('smartphones')){
+    sizeButtons = ['64GB', '128GB', '256GB', '512GB'];
+  } else {
+    sizeButtons = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  };
+
   return (
     <div className="details-container">
       <div className="left-details-container">
@@ -76,19 +98,14 @@ export default function ItemDetails() {
           <span>Size</span>
 
           <div className="right-details-sizes">
-          {productDetails.category?.startsWith('sunglasses') ?  
-          
-          (<button onClick={()=>setSizeButtonClicked('OS')} className={sizeButtonClicked === 'OS' ? 'active-size-btn' : 'size-btn'}>OS</button>)
-        :
-        <>
-        <button onClick={()=>setSizeButtonClicked('S')} className={sizeButtonClicked === 'S' ? 'active-size-btn' : 'size-btn'}>S</button>
-        <button onClick={()=>setSizeButtonClicked('M')} className={sizeButtonClicked === 'M' ? 'active-size-btn' : 'size-btn'}>M</button>
-        <button onClick={()=>setSizeButtonClicked('L')} className={sizeButtonClicked === 'L' ? 'active-size-btn' : 'size-btn'}>L</button>
-        <button onClick={()=>setSizeButtonClicked('XL')} className={sizeButtonClicked === 'XL' ? 'active-size-btn' : 'size-btn'}>XL</button>
-        <button onClick={()=>setSizeButtonClicked('XXL')} className={sizeButtonClicked === 'XXL' ? 'active-size-btn' : 'size-btn'}>XXL</button>
-        </>
-        }
-
+          {sizeButtons.map((size) => (
+            <button 
+            key={size} 
+            onClick={()=>setSizeButtonClicked(size)} className={sizeButtonClicked === size ? 'active-size-btn' : 'size-btn'}>{size}
+            </button>
+          ))}
+        
+      
           </div>
 
           <div className="add-to-cart-container">
