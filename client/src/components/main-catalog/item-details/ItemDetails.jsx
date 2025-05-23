@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router";
 import { useGetProductById } from "../../../api-hooks/api-hooks";
 import "./itemDetails.css";
 
-export default function ItemDetails() {
+export default function ItemDetails({addToCartHandler}) {
   const [productDetails, setProductDetails] = useState({});
   const [descriptionClicked, setDescriptionClicked] = useState(true);
   const [availabilityClicked, setavAilabilityClicked] = useState(false);
@@ -29,7 +29,8 @@ export default function ItemDetails() {
   };
 
   useEffect(() => {
-    getProductById(id).then((productDetails) => {
+    getProductById(id)
+    .then((productDetails) => {
       setProductDetails(productDetails);
     });
   }, [productDetails, getProductById, id]);
@@ -109,7 +110,7 @@ export default function ItemDetails() {
           </div>
 
           <div className="add-to-cart-container">
-            <button className="add-to-cart">ADD TO CART</button>
+            <button onClick={() => addToCartHandler(productDetails)} className="add-to-cart">ADD TO CART</button>
           </div>
 
           <div className="for-my-mum">
