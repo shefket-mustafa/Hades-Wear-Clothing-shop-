@@ -11,7 +11,7 @@ export default function CatalogItem({product}) {
     </div>
     <div className='catalog-item-p'>
     <p style={{fontWeight: '300'}}>{product.title}</p>
-    <p style={{fontWeight: '600'}}>{product.price}</p>
+    <p style={{fontWeight: '600'}}>{product.price} €</p>
     </div>
     <div>
         </div>
