@@ -13,6 +13,7 @@ import ItemDetails from "./components/main-catalog/item-details/ItemDetails.jsx"
 import NotFound from "./components/not-found/NotFound.jsx";
 import Register from "./components/auth/register/Register.jsx";
 import { useGetLaptopsAndPhones, useGetSkincareAndFragrances, useGetSunglasses } from "./api-hooks/api-hooks.js";
+import Cart from "./components/cart/Cart.jsx";
 
 
 
@@ -29,6 +30,7 @@ function App() {
   const [allSunglasses, setAllSunglasses] = useState([]);
   const [allSkincareAndFragrance, setAllSkincareAndFragrance] = useState([]);
   const [allLaptopsAndSmartPhones, setAllLaptopsAndSmartPhones] = useState([]);
+  const [productsInCart, setProductsInCart] = useState([]);
   
 
   useEffect(() => {
@@ -58,6 +60,9 @@ useEffect(() => {
     setAllLaptopsAndSmartPhones(products)})
 },[]);
 
+  const addToCartHandler = (product) => {
+    setProductsInCart(products => [...products,product]);
+  };
 
 
 
@@ -65,7 +70,7 @@ useEffect(() => {
     <>
     <Scroll />
       <CounterHeader />
-      <Header />
+      <Header cartLength = {productsInCart.length}/>
 
     <Routes>
       <Route path="/" element={<Home />}/>
@@ -91,7 +96,9 @@ useEffect(() => {
       <Route path="/catalog/mens-laptops" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('laptops'))}/>}/>
       <Route path="/catalog/mens-smartphones" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('smartphones'))}/>}/>
 
-      <Route path="/catalog/:id/details" element={<ItemDetails/>}/>
+      <Route path="/catalog/:id/details" element={<ItemDetails addToCartHandler={addToCartHandler} />}/>
+
+      <Route path="/cart" element={<Cart cartItems={productsInCart}/>}/>
 
 
       <Route path="/register" element={<Register/>}/>
