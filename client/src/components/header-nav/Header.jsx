@@ -8,7 +8,7 @@ import mensVisual from '../../assets/images/mensDropdown1.webp'
 import mensVisual2 from '../../assets/images/mensVisual2.webp'
 import DropDownImage from "./dropdown-visuals-image/DropDownImage";
 
-export default function Header() {
+export default function Header({cartLength}) {
 
   const navigate = useNavigate();
   return <div className="header-container">
@@ -101,10 +101,11 @@ export default function Header() {
         </svg>
         </button>
 
-        <button className="cart">
+        <button className="cart" onClick={()=> navigate('/cart')}>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
         <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.01 9l-.94-2H2V5h3l3.6 7.59-1.35 2.45C6.52 15.37 7.48 17 9 17h9v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12L10.1 13h7.45c.75 0 1.41-.41 1.75-1.03L22 6H6.42l-.41-1z"/>
         </svg>
+        {cartLength > 0 && <span className="cart-count-badge">{cartLength}</span>}
         </button>
 
         <Link to='/register'>Sign up</Link>

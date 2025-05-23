@@ -53,6 +53,9 @@
     border: none;
     min-width: 40px;
 }
+.cart:hover {
+ cursor: pointer;
+}
 
 .menu-item{
     position: relative;
