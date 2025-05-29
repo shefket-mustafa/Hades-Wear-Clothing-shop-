@@ -64,8 +64,6 @@ useEffect(() => {
     setProductsInCart(products => [...products,product]);
   };
 
-
-
   return (
     <>
     <Scroll />
