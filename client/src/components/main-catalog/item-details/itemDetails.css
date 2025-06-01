@@ -333,12 +333,11 @@
     .size-btn,
     .active-size-btn {
       padding: 5px 15px;
-      background-color: transparent;
-      border: 3px solid darkgray;
-      transition: all 0.1s ease;
-      box-sizing: border-box; 
       width: 50px; 
       height: 40px;
+    }
+    .active-size-btn{
+      border: 3px solid black;
     }
 
       }

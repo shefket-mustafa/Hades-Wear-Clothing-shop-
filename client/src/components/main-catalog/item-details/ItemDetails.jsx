@@ -28,8 +28,9 @@ export default function ItemDetails({addToCartHandler}) {
     getProductById(id)
     .then((productDetails) => {
       setProductDetails(productDetails);
+      
     });
-  }, [productDetails, getProductById, id]);
+  }, [ getProductById, id]);
 
   let sizeButtons = [];
 
