@@ -14,7 +14,6 @@ export const useGetAllWomensItems = () => {
       const allProductsResponse = womensCategories.map(cat => api.get(`/products/category/${cat.slug}`));
       const resAll = await Promise.all(allProductsResponse);
       const allResult = resAll.flatMap((product) => product.data.products);
-      console.log(allResult);
       return allResult;
       } catch (err) {
         console.error("Failed to fetch womens products: " + err.message);

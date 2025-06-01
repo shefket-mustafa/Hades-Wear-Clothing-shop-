@@ -87,9 +87,6 @@ export const useGetLaptopsAndPhones = () => {
       const laptops = await api.get(`/products/category/laptops`);
       const smartphones = await api.get(`/products/category/smartphones`);
 
-      console.log(laptops.data.products);
-      console.log(smartphones.data.products);
-
       const products = Promise.all([laptops,smartphones]);
       const response = (await products).flatMap(res => res.data.products);
       return response;
@@ -100,6 +97,24 @@ export const useGetLaptopsAndPhones = () => {
     }
   }
   return {getLaptopsAndPhones}
+}
+
+export  const useSearchByTitle = () => {
+
+  const searchByTitle = async (title) => {
+
+    try{
+      const response = await api.get(`/products/search?q=${title}`);
+      console.log(response.products);
+      return response.data.products;
+
+    }catch(err){
+      console.error(err.message);
+      return[]
+    }
+
+  }
+  return {searchByTitle}
 }
 
 

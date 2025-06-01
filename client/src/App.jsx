@@ -14,6 +14,7 @@ import NotFound from "./components/not-found/NotFound.jsx";
 import Register from "./components/auth/register/Register.jsx";
 import { useGetLaptopsAndPhones, useGetSkincareAndFragrances, useGetSunglasses } from "./api-hooks/api-hooks.js";
 import Cart from "./components/cart/Cart.jsx";
+import Search from "./components/search-modal/Search.jsx";
 
 
 
@@ -32,6 +33,7 @@ function App() {
   const [allSkincareAndFragrance, setAllSkincareAndFragrance] = useState([]);
   const [allLaptopsAndSmartPhones, setAllLaptopsAndSmartPhones] = useState([]);
   const [productsInCart, setProductsInCart] = useState([]);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   
 
   useEffect(() => {
@@ -57,7 +59,6 @@ useEffect(() => {
 useEffect(() => {
   getLaptopsAndPhones()
   .then(products => {
-    console.log(products);
     setAllLaptopsAndSmartPhones(products)})
 },[]);
 
@@ -66,15 +67,21 @@ useEffect(() => {
       alert("Please select a size before adding to cart.");
       return;
     }
-  
     setProductsInCart((products) => [...products, { product, size }]);
   };
+
+  const toggleSearch = () => {
+    setIsSearchOpen(prev => !prev);
+  };
+
 
   return (
     <>
     <Scroll />
+    <Search isSearchOpen={isSearchOpen} onToggle={toggleSearch}/>
+    
       <CounterHeader />
-      <Header cartLength = {productsInCart.length}/>
+      <Header cartLength = {productsInCart.length} isSearchOpen={isSearchOpen} onToggle={toggleSearch}/>
 
     <Routes>
       <Route path="/" element={<Home />}/>
@@ -112,6 +119,7 @@ useEffect(() => {
     </Routes>
     <RedLine />
       <Footer />
+    
     </>
   )
 }

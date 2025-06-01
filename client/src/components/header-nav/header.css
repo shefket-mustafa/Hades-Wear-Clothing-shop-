@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    z-index: 10;
+    z-index: 1;
     
 }
 
@@ -44,7 +44,9 @@
     border: none;
     background-color: transparent;
    align-self: center;
-   
+}
+.search:hover{
+  cursor: pointer;
 }
 
 .cart {

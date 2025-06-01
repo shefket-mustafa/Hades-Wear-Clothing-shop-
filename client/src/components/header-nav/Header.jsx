@@ -7,9 +7,11 @@ import dropVisual2 from '../../assets/images/dropdown-visuals-shoes.webp'
 import mensVisual from '../../assets/images/mensDropdown1.webp'
 import mensVisual2 from '../../assets/images/mensVisual2.webp'
 import DropDownImage from "./dropdown-visuals-image/DropDownImage";
+import { useState } from "react";
+import Search from "../search-modal/Search";
 
-export default function Header({cartLength}) {
-
+export default function Header({cartLength, isSearchOpen, onToggle}) {
+  
   const navigate = useNavigate();
   return <div className="header-container">
 
@@ -92,10 +94,7 @@ export default function Header({cartLength}) {
     </div>
 
     <div className="search-cart">
-
-        
-
-        <button className="search">
+        <button className="search" onClick={() => onToggle()} >
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" viewBox="0 0 24 24">
         <path d="M10 2a8 8 0 105.293 14.707l5 5a1 1 0 001.414-1.414l-5-5A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
         </svg>
@@ -110,5 +109,7 @@ export default function Header({cartLength}) {
 
         <Link to='/register'>Sign up</Link>
     </div>
+
+    
   </div>
 }
