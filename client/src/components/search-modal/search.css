@@ -90,6 +90,10 @@
       .search-products {
         margin-bottom: 1.5rem;
       }
+      .search-close-btn {
+        position: relative;
+        z-index: 10;
+      }
   }
 
 
