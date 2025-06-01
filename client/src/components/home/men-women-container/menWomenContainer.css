@@ -32,6 +32,11 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .men-women-container{
+        margin-top: 5px;
+    }
+
     .men-women-container a {
         font-size: 12px;
         padding: 5px 15px;

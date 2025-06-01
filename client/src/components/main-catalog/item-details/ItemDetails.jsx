@@ -24,10 +24,6 @@ export default function ItemDetails({addToCartHandler}) {
     setDimensionsClicked( prev => !prev);
   }
 
-  const sizeButtonChosen = (size) => {
-    setSizeButtonClicked(size);
-  };
-
   useEffect(() => {
     getProductById(id)
     .then((productDetails) => {
@@ -110,7 +106,14 @@ export default function ItemDetails({addToCartHandler}) {
           </div>
 
           <div className="add-to-cart-container">
-            <button onClick={() => addToCartHandler(productDetails)} className="add-to-cart">ADD TO CART</button>
+            <button onClick={() => {
+              if (sizeButtonClicked === '') {
+                alert("Please select a size.");
+                return;
+              }
+              addToCartHandler(productDetails,sizeButtonClicked)
+              setSizeButtonClicked('')
+            }} className="add-to-cart">ADD TO CART</button>
           </div>
 
           <div className="for-my-mum">

@@ -9,8 +9,8 @@ export default function Cart({ cartItems = [] }) {
       <h2>Your items</h2>
       {cartItems.length === 0 ? <p className='cart-empty'>Your shopping cart is empty.</p> : 
       
-      cartItems.map((item) => (
-      <CartLeftItem key={item.id} item={item}/>
+      cartItems.map(({product, size}) => (
+      <CartLeftItem key={product.id + size} item={product} size={size}/>
       ))
       }
 
