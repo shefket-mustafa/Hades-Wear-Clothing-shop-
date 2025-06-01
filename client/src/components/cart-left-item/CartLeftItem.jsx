@@ -12,7 +12,7 @@ export default function CartLeftItem({item, size}) {
     {size && <p><strong>Size:</strong> {size}</p>}
   </div>
   <div className="cart-left-container">
-    <button onClick={() => {
+    <button style={{color: 'black'}} onClick={() => {
         if(inputState<=1){
             return
         } else {
@@ -20,7 +20,7 @@ export default function CartLeftItem({item, size}) {
         }
     }}>-</button>
     <input type="text" value={inputState}/>
-    <button onClick={() => setInputState(prev => prev+1)}>+</button>
+    <button style={{color: 'black'}} onClick={() => setInputState(prev => prev+1)}>+</button>
   </div>
 </div>
 }
