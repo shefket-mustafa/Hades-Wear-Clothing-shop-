@@ -30,7 +30,7 @@ export default function ItemDetails({addToCartHandler}) {
       setProductDetails(productDetails);
       
     });
-  }, [ getProductById, id]);
+  }, [ id]);
 
   let sizeButtons = [];
 

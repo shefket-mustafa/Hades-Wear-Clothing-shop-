@@ -109,7 +109,15 @@
    .catalog-items-container{
       display: flex;
       flex-direction: column;
-      
    }
+
+   .show-filters{
+display: flex;
+justify-content: center;
+align-items: center;      
+   }
+   .show-filters svg{
+     transform: translateY(-1px);    
+         }
  }
 

@@ -1,14 +1,16 @@
 import CatalogItem from "./catalog-item/CatalogItem";
 import "./mainCatalog.css";
 import pugImg from "../../assets/images/error-404.jpg";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { useState } from "react";
 
 export default function MainCatalog({ allProducts }) {
   const [sortBy, setSortBy] = useState("default");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedSize, setSelectedSize] = useState(null);
-
+  const location = useLocation();
+  const pathname = location.pathname;
+console.log(pathname);
   const filteredProducts = allProducts.filter(product => {
     return selectedCategory === 'All' || product.category.toLowerCase().includes(selectedCategory.toLowerCase())})
     .sort((a,b) => {
@@ -32,7 +34,7 @@ export default function MainCatalog({ allProducts }) {
         <hr className="right-details-first-break" />
       </div>
       <div className="main-catalog-sort-filter">
-        <div className="show-filters">
+        {pathname === '/catalog/women' || pathname === '/catalog/men' && <div className="show-filters">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="20px"
@@ -60,7 +62,7 @@ export default function MainCatalog({ allProducts }) {
               <option value="Fragrances">Fragrances</option>
             </select>
           </button>
-        </div>
+        </div>}
 
         <div className="sort">
           <p className="sort-by">Sort by</p>
