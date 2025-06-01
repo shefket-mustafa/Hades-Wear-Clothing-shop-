@@ -248,9 +248,11 @@
         box-sizing: border-box; 
         width: 60px; 
         height: 50px;
+        color: black;
       }
 
       .active-size-btn{
+        color: black;
         border: 3px solid black;
       }
 
@@ -265,8 +267,8 @@
     }
 
     .left-details-img { 
-      width: 360px;
-      height: 250px;
+      width: 100%;
+      
       overflow: hidden;
       background-color: rgb(245, 245, 245);
     }
@@ -335,8 +337,10 @@
       padding: 5px 15px;
       width: 50px; 
       height: 40px;
+      color: black;
     }
     .active-size-btn{
+      color: black;
       border: 3px solid black;
     }
 

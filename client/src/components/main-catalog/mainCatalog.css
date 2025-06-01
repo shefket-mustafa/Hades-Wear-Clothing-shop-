@@ -64,7 +64,12 @@
  .show-filters p{
     font-size: 15px;
  }
-
+.sort-select{
+   color: black;
+}
+.filter-select{
+   color: black;
+}
 .best-selling-p{
     color: black;
     font-size: 15px;
