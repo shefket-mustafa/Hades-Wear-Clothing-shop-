@@ -34,7 +34,7 @@ console.log(pathname);
         <hr className="right-details-first-break" />
       </div>
       <div className="main-catalog-sort-filter">
-        {pathname === '/catalog/women' || pathname === '/catalog/men' && <div className="show-filters">
+        {(pathname === '/catalog/women' || pathname === '/catalog/men') && (<div className="show-filters">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="20px"
@@ -62,7 +62,7 @@ console.log(pathname);
               <option value="Fragrances">Fragrances</option>
             </select>
           </button>
-        </div>}
+        </div> ) }
 
         <div className="sort">
           <p className="sort-by">Sort by</p>
