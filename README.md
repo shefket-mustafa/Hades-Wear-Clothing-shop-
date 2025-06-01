@@ -75,16 +75,16 @@ npm run dev
 ## + Currently working on
 
 - [ ] Global state managment with CONTEXT API
-- [ ] Authentication
+
 
 
 
 ---
 ## 🧠 Future Improvements
 
-Persist cart and user data
-
-Admin dashboard for inventory
+- [ ] Persist cart and user data
+- [ ] Admin dashboard for inventory
+- [ ] Authentication
 
 User authentication
 
