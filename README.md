@@ -63,6 +63,14 @@ npm run dev
 
 ---
 
+##++ Currently working on
+
+- [ ] Search feature
+
+
+
+---
+
 
 ## 🧠 Future Ideas
 
