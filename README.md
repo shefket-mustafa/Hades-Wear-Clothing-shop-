@@ -14,9 +14,18 @@ A simple, client-side React app for a fictional clothing brand called **Hades We
 
 ---
 
-## 📱 Responsive Design
+## Features
 
-Moviefy is fully responsive and mobile-friendly. Whether you're browsing from your phone, tablet, or desktop, the layout adjusts seamlessly to fit your screen.
+- Product search by title (real-time)  
+- Filter by category (e.g., Watches, Shoes, Fragrances)  
+- Sort products by:
+  - Price: Low to High / High to Low
+  - Name: A–Z / Z–A
+- Product detail view with:
+  - Dynamic size options
+  - Expandable sections (description, dimensions, availability)
+- Shopping cart functionality with size selection
+- Responsive design (mobile-first)
 
 ---
 
@@ -63,19 +72,22 @@ npm run dev
 
 ---
 
-##++ Currently working on
+## + Currently working on
 
-- [ ] Search feature
+- [ ] Global state managment with CONTEXT API
+- [ ] Authentication
 
+
+
+---
+## 🧠 Future Improvements
+
+Persist cart and user data
+
+Admin dashboard for inventory
+
+User authentication
 
 
 ---
 
-
-## 🧠 Future Ideas
-
-- [ ] Add authentication
-- [ ] Add product filtering
-
-
----
