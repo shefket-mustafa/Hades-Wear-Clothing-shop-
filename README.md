@@ -17,7 +17,7 @@ A simple, client-side React app for a fictional clothing brand called **Hades We
 ## Features
 
 - Product search by title (real-time)  
-- Filter by category (e.g., Watches, Shoes, Fragrances)  
+- Filter by category on main collections like '/catalog/women' & '/catalog/men/ (e.g., Watches, Shoes, Fragrances)  
 - Sort products by:
   - Price: Low to High / High to Low
   - Name: A–Z / Z–A
