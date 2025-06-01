@@ -1,4 +1,4 @@
-# 🧥 Hades Wear – Minimalist Clothing Shop
+# 🧥 Hades Wear – Clothing Shop
 
 A simple, client-side React app for a fictional clothing brand called **Hades Wear**.
 
