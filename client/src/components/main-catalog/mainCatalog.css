@@ -31,6 +31,17 @@
     color: grey;
     font-size: 15px;
  }
+ .sort-select{
+   border: none;
+   outline: none;
+   cursor: pointer;
+
+ }
+ .filter-select{
+   border: none;
+   outline: none;
+   cursor: pointer;
+ }
 
  .sort button {
     align-self: center;
@@ -52,8 +63,8 @@
  }
  .show-filters p{
     font-size: 15px;
-    
  }
+
 .best-selling-p{
     color: black;
     font-size: 15px;
