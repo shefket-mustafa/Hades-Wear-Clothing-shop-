@@ -2,8 +2,6 @@
 
 A simple, client-side React app for a fictional clothing brand called **Hades Wear**.
 
-> ⚠️ This project is frontend-only and a mock server will be used for authentication.
-
 ---
 
 ## 🚀 Tech Stack
@@ -13,6 +11,12 @@ A simple, client-side React app for a fictional clothing brand called **Hades We
 - **React**
 - **React Router**
 - **Axios** 
+
+---
+
+## 📱 Responsive Design
+
+Moviefy is fully responsive and mobile-friendly. Whether you're browsing from your phone, tablet, or desktop, the layout adjusts seamlessly to fit your screen.
 
 ---
 
@@ -63,6 +67,6 @@ npm run dev
 
 - [ ] Add authentication
 - [ ] Add product filtering
-- [ ] Improve responsiveness
+
 
 ---
