@@ -30,7 +30,7 @@ export default function Search({isSearchOpen, onToggle}) {
   </div>
   <hr className="right-details-first-break" />
   <div className='search-products'>
-  {searchProducts.length !== 0 ? searchProducts.map((product) => <CatalogItem key={product.id} product={product}/>): 
+  {searchProducts.length !== 0 ? searchProducts.map((product) => <div key={product.id} onClick={onToggle}><CatalogItem  product={product}/></div> ): 
     <div className='search-none'>
       <p>No results could be found</p>
       <button onClick={()=>setSearchInput('')}>New Search</button>
