@@ -14,7 +14,7 @@ import NotFound from "./components/not-found/NotFound.jsx";
 import Register from "./components/auth/register/Register.jsx";
 import { useGetLaptopsAndPhones, useGetSkincareAndFragrances, useGetSunglasses } from "./api-hooks/api-hooks.js";
 import Cart from "./components/cart/Cart.jsx";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 
 
