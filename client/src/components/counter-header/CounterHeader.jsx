@@ -3,20 +3,38 @@ import './counter-header.css';
 
 export default function CounterHeader() {
 
-  const [secondsLeft, setSecondsLeft] = useState(10 * 60); 
-
+  
+  const STORAGE_KEY = 'offerExpiration';
+  const [secondsLeft, setSecondsLeft] = useState(0);
   useEffect(() => {
-    const interval = setInterval(() => {
-      setSecondsLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(interval);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
+    
+    let expiration = localStorage.getItem(STORAGE_KEY);
+    if (!expiration) {
+      // Set expiration time to 10 minutes from now
+      const newExpiration = Date.now() + 10 * 60 * 1000;
+      localStorage.setItem(STORAGE_KEY, newExpiration);
+      expiration = newExpiration;
+    }
 
-    return () => clearInterval(interval);
+    const expirationTime = parseInt(expiration, 10);
+
+    const updateRemainingTime = () => {
+      const now = Date.now();
+      const remaining = Math.floor((expirationTime - now) / 1000);
+      if (remaining <= 0) {
+        setSecondsLeft(0);
+        clearInterval(intervalId);
+        localStorage.removeItem(STORAGE_KEY);
+      } else {
+        setSecondsLeft(remaining);
+      }
+    };
+
+    updateRemainingTime();
+    const intervalId = setInterval(updateRemainingTime, 1000);
+
+    
+    return () => clearInterval(intervalId);
   }, []);
 
   const formatTime = (seconds) => {

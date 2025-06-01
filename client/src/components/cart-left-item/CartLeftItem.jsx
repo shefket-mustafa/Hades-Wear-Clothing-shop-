@@ -1,26 +1,33 @@
 import { useState } from "react"
 
-export default function CartLeftItem({item, size}) {
+export default function CartLeftItem({item, size, quantity, changeQuantity, removeFromCart}) {
 
-    const [inputState, setInputState] = useState(1)
+  const quantityDecrement = () => {
+    if (quantity > 1) {
+      changeQuantity(item.id, size, quantity - 1);
+    } else {
+      removeFromCart(item.id, size)
+    }
+  }
+
+  const quantityIncrement = () => {
+    changeQuantity(item.id, size, quantity + 1);
+  };
+
+    
   return <div key={item.id} className='cart-left-item'>
+    <p onClick={() => removeFromCart(item.id,size)} className="cart-item-x">X</p>
 
   <img src={item?.images[0]} alt={item.title} />
   <div className='cart-item-details'>
     <p>{item.title}</p>
-    <p>{item.price} €</p>
+    <p>{((item.price * quantity).toFixed(2))} €</p>
     {size && <p><strong>Size:</strong> {size}</p>}
   </div>
   <div className="cart-left-container">
-    <button style={{color: 'black'}} onClick={() => {
-        if(inputState<=1){
-            return
-        } else {
-            setInputState(prev => prev-1)
-        }
-    }}>-</button>
-    <input type="text" value={inputState}/>
-    <button style={{color: 'black'}} onClick={() => setInputState(prev => prev+1)}>+</button>
+    <button style={{color: 'black'}} onClick={quantityDecrement}>-</button>
+    <input type="text" value={quantity}/>
+    <button style={{color: 'black'}} onClick={quantityIncrement}>+</button>
   </div>
 </div>
 }

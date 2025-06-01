@@ -17,6 +17,9 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+
+
+
 .cart-items-left h2 {
   font-size: 24px;
   font-weight: 600;
@@ -40,7 +43,16 @@
   padding: 15px 20px;
   border-radius: 10px;
   transition: background-color 0.3s ease;
+  position: relative;
 }
+.cart-item-x{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
 
 .cart-left-item:hover {
   background-color: #eeeeee;

@@ -34,6 +34,7 @@ function App() {
   const [allLaptopsAndSmartPhones, setAllLaptopsAndSmartPhones] = useState([]);
   const [productsInCart, setProductsInCart] = useState([]);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [totalCartQuantity, setTotalCartQuantity] = useState(0);
   
 
   useEffect(() => {
@@ -66,13 +67,37 @@ useEffect(() => {
     if (!size) {
       alert("Please select a size before adding to cart.");
       return;
-    }
-    setProductsInCart((products) => [...products, { product, size }]);
+    };
+    setProductsInCart(previousItems => {
+      const existingProductIndex = previousItems.findIndex( item => item.id === product.id && item.size === size);
+
+      if(existingProductIndex !== -1){
+        const updatedItems = [...previousItems];
+        updatedItems[existingProductIndex].quantity += 1;
+        return updatedItems
+      }
+      return [...previousItems, {...product, size, quantity: 1}]
+    })
+
+    
+  };
+  const removeFromCart = (id, size) => {
+    setProductsInCart( previousItems => previousItems.filter(item => !(item.id === id && item.size === size)));
   };
 
   const toggleSearch = () => {
     setIsSearchOpen(prev => !prev);
   };
+  
+  const changeQuantity = (id, size, newQuantity) => {
+    setProductsInCart(previousItems => previousItems
+      .map(item => item.id === id && item.size === size ? {...item, quantity: newQuantity} : item)) 
+  }
+
+useEffect(() => {
+  const total = productsInCart.reduce((sum, item) => sum + item.quantity, 0);
+  setTotalCartQuantity(total)
+},[productsInCart])
 
 
   return (
@@ -81,7 +106,7 @@ useEffect(() => {
     <Search isSearchOpen={isSearchOpen} onToggle={toggleSearch}/>
     
       <CounterHeader />
-      <Header cartLength = {productsInCart.length} isSearchOpen={isSearchOpen} onToggle={toggleSearch}/>
+      <Header cartLength = {totalCartQuantity} isSearchOpen={isSearchOpen} onToggle={toggleSearch}/>
 
     <Routes>
       <Route path="/" element={<Home />}/>
@@ -109,7 +134,7 @@ useEffect(() => {
 
       <Route path="/catalog/:id/details" element={<ItemDetails addToCartHandler={addToCartHandler} />}/>
 
-      <Route path="/cart" element={<Cart cartItems={productsInCart}/>}/>
+      <Route path="/cart" element={<Cart cartItems={productsInCart} changeQuantity={changeQuantity} removeFromCart={removeFromCart}/>}/>
 
 
       <Route path="/register" element={<Register/>}/>
