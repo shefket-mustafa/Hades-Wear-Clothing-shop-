@@ -11,8 +11,9 @@
    place-items: center;
    gap: 15px;
    padding: 20px;
-   
+   margin: auto;
 }
+
 .topcatalog h1{
    margin-left: 50%;
    transform: translateX(-50%);
@@ -87,3 +88,12 @@
    margin-bottom: 1rem;
    min-height: 30vh
  }
+
+ @media screen and (max-width: 768px) {
+   .catalog-items-container{
+      display: flex;
+      flex-direction: column;
+      
+   }
+ }
+

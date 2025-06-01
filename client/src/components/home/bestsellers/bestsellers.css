@@ -43,3 +43,12 @@
     font-weight: 300;
     line-height: 8px;
 }
+
+@media screen and (max-width: 768px){
+    .bestsellers{
+        display: none;
+    }
+    .title{
+        display: none;
+    }
+}

@@ -52,6 +52,15 @@
     background-color: transparent;
     border: none;
     min-width: 40px;
+    position: relative;
+}
+.cart-count-badge{
+  background-color: black;
+  color: white;
+  position: absolute;
+  border-radius: 50%;
+  width: 15px;
+  font-size: 12px;
 }
 .cart:hover {
  cursor: pointer;
@@ -157,6 +166,39 @@
     justify-content: flex-start;
     align-items: center;
    padding: 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+      .header-container{
+        align-items: center;
+        padding: 10px 20px;
+        gap: 20px;
+      }
+
+      .logo-btns {
+        justify-content: center;
+        padding: 0;
+        font-size: 18px;
+      }
+
+      .logo-btns img {
+        max-width: 60px;
+      }
+
+       .search-cart {
+       padding-right: 0;
+        gap: 15px;
+      }
+      .search-cart a {
+        font-size: 14px;
+      }
+
+      .menu-item{
+        display: none;
+      }
+
+
+    
   }
 
 

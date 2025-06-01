@@ -30,3 +30,22 @@
     right: 38%;
     transform: translateX(50%);
 }
+
+@media screen and (max-width: 768px) {
+    .men-women-container a {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+
+    .women-men-women-a{
+        bottom: 50px;
+        left: 32%;
+        transform: translateX(-50%);
+    }
+    
+    .women-men-men-a{
+        bottom: 50px;
+        right: 32%;
+        transform: translateX(50%);
+    }
+}

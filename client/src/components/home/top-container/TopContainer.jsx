@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import homeTop from '../../../assets/images/home-main-top.webp'
+import './topContainer.css'
 
 
 export default function TopContainer() {

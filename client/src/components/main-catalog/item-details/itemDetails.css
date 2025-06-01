@@ -11,7 +11,7 @@
 .left-details-container{
     display: flex;
     flex-direction: row;
-  gap: 20px;
+    gap: 20px;
 }
 
 .left-details-img {
@@ -251,6 +251,72 @@
 
       .active-size-btn{
         border: 3px solid black;
+      }
+
+      @media screen and (max-width: 768px) {
+        .right-details-first-break{
+          margin-top: 0px;
+          width: 99%;
+      }
+
+      .details-container{
+       flex-direction: column;
+    }
+
+    .left-details-img { 
+      width: 360px;
+      height: 250px;
+      overflow: hidden;
+      background-color: rgb(245, 245, 245);
+    }
+
+    .right-details-container{
+      display: none;
+  }
+
+  .right-details-tab{
+    padding-left: 0px;
+    max-width: 350px;
+}
+
+.right-tab-description, .right-tab-dimensions, .details-availability{
+  max-width: 350px;
+}
+
+.description-title-container, 
+.dimensions-title-container, 
+.availability-title-container{
+  min-width: 0;
+  max-width: 350px;
+}
+
+
+.details-dropdown-content,
+      .dimensions-dropdown-content,
+      .availability-dropdown-content {
+        width: 350px;
+        overflow: hidden;
+      }
+
+
+      .details-dropdown-content.open,
+      .dimensions-dropdown-content.open,
+      .availability-dropdown-content.open {
+        max-width: 350px;
+        padding-bottom: 10px;
+      }
+
+      .add-to-cart-container{
+        transform: translateX(20%);
+      }
+      .for-my-mum{
+        transform: translateX(20%);
+      }
+
+      .description-title-container{
+        padding-right: 0;
+      }
+
       }
 
 

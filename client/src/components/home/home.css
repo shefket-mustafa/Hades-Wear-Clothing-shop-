@@ -1,8 +1,4 @@
-.home-container {
-    box-sizing: border-box;
-    
-    overflow: hidden;
-}
+
 .top-container{
     position: relative;
 }
@@ -27,7 +23,7 @@
 }
 
 .middle-container{
-    box-sizing: border-box;
+    
     display: flex;
     position: relative;
 }
@@ -60,4 +56,17 @@
     background-color: #702525;
     min-height: 60px;
     margin-top: 30px;
+}
+
+@media screen and (max-width: 768px){
+   
+    .middle-container a {
+       
+        font-size: 12px;
+        padding: 5px 15px;
+        border-radius: 3px;
+    }
+
+
+    
 }

@@ -166,7 +166,7 @@ export default function ItemDetails({addToCartHandler}) {
             <div className="description-title-container" onClick={descriptionSetter}>
           <p  className="details-description-title">Description</p>
           <svg className={`arrow ${descriptionClicked ? "open" : ""}`} xmlns="http://www.w3.org/2000/svg" width='20px' fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25L12 15.75 4.5 8.25" />
             </svg>
             </div>
              
@@ -183,7 +183,7 @@ export default function ItemDetails({addToCartHandler}) {
             <div className="dimensions-title-container" onClick={dimensionsSetter}>
           <p className="details-description-title">Dimensions</p>
           <svg className={`arrow ${dimensionsClicked ? "open" : ""}`} xmlns="http://www.w3.org/2000/svg" width='20px' fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25L12 15.75 4.5 8.25" />
             </svg>
             </div>
         <div className={`dimensions-dropdown-content ${dimensionsClicked ? "open" : ""}`}>
@@ -213,7 +213,7 @@ export default function ItemDetails({addToCartHandler}) {
   <div className="availability-title-container" onClick={availabilitySetter}>
     <p className="details-description-title">Availability</p>
     <svg className={`arrow ${availabilityClicked ? "open" : ""}`} xmlns="http://www.w3.org/2000/svg" width='20px' fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25L12 15.75 4.5 8.25" />
     </svg>
   </div>
 

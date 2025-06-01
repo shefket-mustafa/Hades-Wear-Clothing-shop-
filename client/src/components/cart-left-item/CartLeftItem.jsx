@@ -4,6 +4,7 @@ export default function CartLeftItem({item}) {
 
     const [inputState, setInputState] = useState(1)
   return <div key={item.id} className='cart-left-item'>
+
   <img src={item.images[0]} alt={item.title} />
   <div className='cart-item-details'>
     <p>{item.title}</p>
@@ -11,7 +12,7 @@ export default function CartLeftItem({item}) {
   </div>
   <div className="cart-left-container">
     <button onClick={() => {
-        if(inputState<1){
+        if(inputState<=1){
             return
         } else {
             setInputState(prev => prev-1)
