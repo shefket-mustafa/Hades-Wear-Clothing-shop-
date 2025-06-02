@@ -35,6 +35,8 @@ function App() {
   const [productsInCart, setProductsInCart] = useState([]);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [totalCartQuantity, setTotalCartQuantity] = useState(0);
+  const [addPop, setAddPop] = useState(false);
+  const [removePop, setRemovePop] = useState(false);
   
 
   useEffect(() => {
@@ -100,13 +102,15 @@ useEffect(() => {
 },[productsInCart])
 
 
+
+
   return (
     <>
     <Scroll />
     <Search isSearchOpen={isSearchOpen} onToggle={toggleSearch}/>
     
       <CounterHeader />
-      <Header cartLength = {totalCartQuantity} isSearchOpen={isSearchOpen} onToggle={toggleSearch}/>
+      <Header cartLength = {totalCartQuantity} isSearchOpen={isSearchOpen} onToggle={toggleSearch} addPop={addPop} removePop={removePop}/>
 
     <Routes>
       <Route path="/" element={<Home />}/>
@@ -132,9 +136,9 @@ useEffect(() => {
       <Route path="/catalog/mens-laptops" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('laptops'))}/>}/>
       <Route path="/catalog/mens-smartphones" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('smartphones'))}/>}/>
 
-      <Route path="/catalog/:id/details" element={<ItemDetails addToCartHandler={addToCartHandler} />}/>
+      <Route path="/catalog/:id/details" element={<ItemDetails addToCartHandler={addToCartHandler} setAddPop={setAddPop} />}/>
 
-      <Route path="/cart" element={<Cart cartItems={productsInCart} changeQuantity={changeQuantity} removeFromCart={removeFromCart}/>}/>
+      <Route path="/cart" element={<Cart cartItems={productsInCart} changeQuantity={changeQuantity} removeFromCart={removeFromCart} setRemovePop={setRemovePop}/>}/>
 
 
       <Route path="/register" element={<Register/>}/>

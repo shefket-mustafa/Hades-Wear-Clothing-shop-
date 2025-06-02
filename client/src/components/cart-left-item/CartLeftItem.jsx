@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function CartLeftItem({item, size, quantity, changeQuantity, removeFromCart}) {
+export default function CartLeftItem({item, size, quantity, changeQuantity, removeFromCart, setRemovePop}) {
 
   const quantityDecrement = () => {
     if (quantity > 1) {
@@ -16,7 +16,11 @@ export default function CartLeftItem({item, size, quantity, changeQuantity, remo
 
     
   return <div key={item.id} className='cart-left-item'>
-    <p onClick={() => removeFromCart(item.id,size)} className="cart-item-x">X</p>
+    <p onClick={() => {
+      removeFromCart(item.id,size)
+      setRemovePop(true)
+      setTimeout(() => {setRemovePop(false)},1500)
+      }} className="cart-item-x">X</p>
 
   <img src={item?.images[0]} alt={item.title} />
   <div className='cart-item-details'>

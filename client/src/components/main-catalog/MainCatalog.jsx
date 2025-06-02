@@ -10,7 +10,6 @@ export default function MainCatalog({ allProducts }) {
   const [selectedSize, setSelectedSize] = useState(null);
   const location = useLocation();
   const pathname = location.pathname;
-console.log(pathname);
   const filteredProducts = allProducts.filter(product => {
     return selectedCategory === 'All' || product.category.toLowerCase().includes(selectedCategory.toLowerCase())})
     .sort((a,b) => {

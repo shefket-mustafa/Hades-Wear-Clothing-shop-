@@ -7,10 +7,10 @@ import dropVisual2 from '../../assets/images/dropdown-visuals-shoes.webp'
 import mensVisual from '../../assets/images/mensDropdown1.webp'
 import mensVisual2 from '../../assets/images/mensVisual2.webp'
 import DropDownImage from "./dropdown-visuals-image/DropDownImage";
-import { useState } from "react";
-import Search from "../search-modal/Search";
+import AddPop from "../pop-ups/PopUpAdd";
+import RemovePop from "../pop-ups/PopUpRemove";
 
-export default function Header({cartLength, isSearchOpen, onToggle}) {
+export default function Header({cartLength, onToggle, addPop, removePop}) {
   
   const navigate = useNavigate();
   return <div className="header-container">
@@ -92,6 +92,9 @@ export default function Header({cartLength, isSearchOpen, onToggle}) {
         </div>
     </div>
     </div>
+
+    {addPop && <AddPop />}
+    {removePop && <RemovePop />}
 
     <div className="search-cart">
         <button className="search" onClick={() => onToggle()} >

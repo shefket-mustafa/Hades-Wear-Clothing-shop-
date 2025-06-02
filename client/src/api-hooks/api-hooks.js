@@ -105,7 +105,7 @@ export  const useSearchByTitle = () => {
 
     try{
       const response = await api.get(`/products/search?q=${title}`);
-      console.log(response.products);
+      
       return response.data.products;
 
     }catch(err){

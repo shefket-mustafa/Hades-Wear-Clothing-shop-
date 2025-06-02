@@ -6,6 +6,11 @@
     z-index: 1;
     
 }
+.pop-up-add, .pop-up-remove{
+  color: green;  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+}
 
 .logo-btns{
     display: flex;

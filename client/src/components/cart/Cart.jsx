@@ -1,7 +1,7 @@
 import CartLeftItem from '../cart-left-item/CartLeftItem';
 import './cart.css'
 
-export default function Cart({ cartItems = [], changeQuantity, removeFromCart }) {
+export default function Cart({ cartItems = [], changeQuantity, removeFromCart, setRemovePop={setRemovePop} }) {
   return <div className="cart-modal">
 
     <div className="cart-items-left">
@@ -17,6 +17,7 @@ export default function Cart({ cartItems = [], changeQuantity, removeFromCart })
       quantity={item.quantity} 
       changeQuantity={changeQuantity}
       removeFromCart={removeFromCart}
+      setRemovePop={setRemovePop}
       />
       ))
       }

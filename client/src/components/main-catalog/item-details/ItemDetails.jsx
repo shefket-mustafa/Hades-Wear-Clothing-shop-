@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useGetProductById } from "../../../api-hooks/api-hooks";
 import "./itemDetails.css";
 
-export default function ItemDetails({addToCartHandler}) {
+export default function ItemDetails({addToCartHandler, setAddPop, setRemovePop}) {
   const [productDetails, setProductDetails] = useState({});
   const [descriptionClicked, setDescriptionClicked] = useState(true);
   const [availabilityClicked, setavAilabilityClicked] = useState(false);
@@ -114,6 +114,11 @@ export default function ItemDetails({addToCartHandler}) {
               }
               addToCartHandler(productDetails,sizeButtonClicked)
               setSizeButtonClicked('')
+              setAddPop(true)
+              setTimeout(() => {
+                setAddPop(false)
+              },1500)
+              setTimeout(() => {})
             }} className="add-to-cart">ADD TO CART</button>
           </div>
 
