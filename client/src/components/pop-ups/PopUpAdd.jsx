@@ -1,3 +1,4 @@
+import './popUp.css'
 export default function AddPop() {
 
   return <div className="pop-up-add">

@@ -1,3 +1,5 @@
+import './popUp.css'
+
 export default function RemovePop() {
 
   return <div className="pop-up-remove">

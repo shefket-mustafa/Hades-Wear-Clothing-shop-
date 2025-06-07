@@ -30,8 +30,8 @@ export default function CounterHeader() {
       }
     };
 
-    updateRemainingTime();
     const intervalId = setInterval(updateRemainingTime, 1000);
+    updateRemainingTime();
 
     
     return () => clearInterval(intervalId);
