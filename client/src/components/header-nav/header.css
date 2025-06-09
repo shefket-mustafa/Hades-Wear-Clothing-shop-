@@ -207,14 +207,6 @@
         display: none;
       }
 
-      .pop-up-add, .pop-up-remove{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        max-height: 40px;
-        max-width: 100px;
-      }
     
   }
 
