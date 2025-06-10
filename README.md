@@ -74,7 +74,7 @@ npm run dev
 
 ## + Currently working on
 
-- [ ] Global state managment with Redux/Toolkit
+- [ ] Global state managment with Context API
 
 
 
