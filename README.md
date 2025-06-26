@@ -84,11 +84,11 @@ npm run dev
 ---
 ## 🧠 Future Improvements
 
-- [ ] Persist cart and user data
+
 - [ ] Admin dashboard for inventory
 - [ ] Authentication
 
-User authentication
+
 
 
 ---
