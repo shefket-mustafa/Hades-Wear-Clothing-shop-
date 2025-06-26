@@ -88,7 +88,7 @@ useEffect(() => {
     };
     
     const changeQuantity = (id, size, newQuantity) => {
-      dispatch({id,size,newQuantity})
+      dispatch(changeQuantity({id,size,newQuantity}))
       }
       
       

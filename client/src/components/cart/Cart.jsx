@@ -20,8 +20,8 @@ export default function Cart({ setRemovePop }) {
       item={item} 
       size={item.size} 
       quantity={item.quantity} 
-      changeQuantity={(payload) => dispatch(changeQuantity(payload))}
-      removeFromCart={(payload) => dispatch(removeFromCart(payload))}
+      changeQuantity={(id, size, quantity) => dispatch(changeQuantity({id, size, quantity}))}
+      removeFromCart={(id,size) => dispatch(removeFromCart({id,size}))}
       setRemovePop={setRemovePop}
       />
       ))
