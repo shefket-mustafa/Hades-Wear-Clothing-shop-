@@ -15,6 +15,8 @@ import Register from "./components/auth/register/Register.jsx";
 import { useGetLaptopsAndPhones, useGetSkincareAndFragrances, useGetSunglasses } from "./api-hooks/api-hooks.js";
 import Cart from "./components/cart/Cart.jsx";
 import Search from "./components/search-modal/Search.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, selectTotalCartQuantity } from "./redux/slices/cartSlice.js";
 
 
 
@@ -31,12 +33,13 @@ function App() {
   const [allMenProducts, setAllMenProducts] = useState([]);
   const [allSunglasses, setAllSunglasses] = useState([]);
   const [allSkincareAndFragrance, setAllSkincareAndFragrance] = useState([]);
-  const [allLaptopsAndSmartPhones, setAllLaptopsAndSmartPhones] = useState([]);
-  const [productsInCart, setProductsInCart] = useState([]);
+  const [allLaptopsAndSmartPhones, setAllLaptopsAndSmartPhones] = useState([])
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [totalCartQuantity, setTotalCartQuantity] = useState(0);
   const [addPop, setAddPop] = useState(false);
   const [removePop, setRemovePop] = useState(false);
+  
+  const dispatch = useDispatch();
+  const totalCartQuantity = useSelector(selectTotalCartQuantity);
   
 
   useEffect(() => {
@@ -70,42 +73,27 @@ useEffect(() => {
       alert("Please select a size before adding to cart.");
       return;
     };
-    setProductsInCart(previousItems => {
-      const existingProductIndex = previousItems.findIndex( item => item.id === product.id && item.size === size);
-
-      if(existingProductIndex !== -1){
-        const updatedItems = [...previousItems];
-        updatedItems[existingProductIndex].quantity += 1;
-        return updatedItems
-      }
-      return [...previousItems, {...product, size, quantity: 1}]
-    })
+   
+    dispatch(addToCart({product, size}))
+    }
+    
 
     
-  };
-  const removeFromCart = (id, size) => {
-    setProductsInCart( previousItems => previousItems.filter(item => !(item.id === id && item.size === size)));
-  };
-
-  const toggleSearch = () => {
-    setIsSearchOpen(prev => !prev);
-  };
-  
-  const changeQuantity = (id, size, newQuantity) => {
-    setProductsInCart(previousItems => previousItems
-      .map(item => item.id === id && item.size === size ? {...item, quantity: newQuantity} : item)) 
-  }
-
-useEffect(() => {
-  const total = productsInCart.reduce((sum, item) => sum + item.quantity, 0);
-  setTotalCartQuantity(total)
-},[productsInCart])
-
-
-
-
-  return (
-    <>
+    const removeFromCart = (id, size) => {
+      dispatch(removeFromCart({id, size}))
+    };
+    
+    const toggleSearch = () => {
+      setIsSearchOpen(prev => !prev);
+    };
+    
+    const changeQuantity = (id, size, newQuantity) => {
+      dispatch({id,size,newQuantity})
+      }
+      
+      
+      return (
+        <>
     <Scroll />
     <Search isSearchOpen={isSearchOpen} onToggle={toggleSearch}/>
     
@@ -138,7 +126,7 @@ useEffect(() => {
 
       <Route path="/catalog/:id/details" element={<ItemDetails addToCartHandler={addToCartHandler} setAddPop={setAddPop} />}/>
 
-      <Route path="/cart" element={<Cart cartItems={productsInCart} changeQuantity={changeQuantity} removeFromCart={removeFromCart} setRemovePop={setRemovePop}/>}/>
+      <Route path="/cart" element={<Cart changeQuantity={changeQuantity} removeFromCart={removeFromCart} setRemovePop={setRemovePop}/>}/>
 
 
       <Route path="/register" element={<Register/>}/>
@@ -152,5 +140,6 @@ useEffect(() => {
     </>
   )
 }
+
 
 export default App

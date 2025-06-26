@@ -1,7 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux';
 import CartLeftItem from '../cart-left-item/CartLeftItem';
 import './cart.css'
+import { changeQuantity, removeFromCart, selectCartItems } from '../../redux/slices/cartSlice';
 
-export default function Cart({ cartItems = [], changeQuantity, removeFromCart, setRemovePop={setRemovePop} }) {
+export default function Cart({ setRemovePop }) {
+  const cartItems = useSelector(selectCartItems);
+  const dispatch = useDispatch();
+
   return <div className="cart-modal">
 
     <div className="cart-items-left">
@@ -15,8 +20,8 @@ export default function Cart({ cartItems = [], changeQuantity, removeFromCart, s
       item={item} 
       size={item.size} 
       quantity={item.quantity} 
-      changeQuantity={changeQuantity}
-      removeFromCart={removeFromCart}
+      changeQuantity={(payload) => dispatch(changeQuantity(payload))}
+      removeFromCart={(payload) => dispatch(removeFromCart(payload))}
       setRemovePop={setRemovePop}
       />
       ))
