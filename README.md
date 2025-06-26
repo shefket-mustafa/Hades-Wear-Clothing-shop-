@@ -3,8 +3,6 @@
 A simple, client-side React app for a fictional clothing brand called **Hades Wear**.
 
 ---
-# Currently integrating global state managment with Redux!
----
 
 ## 🚀 Tech Stack
 
@@ -76,7 +74,7 @@ npm run dev
 
 ## + Currently working on
 
-- [ ] Global state managment with Context API
+- [ ] Global state managment with Redux
 
 
 
