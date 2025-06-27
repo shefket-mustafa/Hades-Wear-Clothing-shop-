@@ -34,4 +34,5 @@ export default function CartLeftItem({item, size, quantity, changeQuantity, remo
     <button style={{color: 'black'}} onClick={quantityIncrement}>+</button>
   </div>
 </div>
+
 }

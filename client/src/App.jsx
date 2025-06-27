@@ -73,7 +73,6 @@ useEffect(() => {
       alert("Please select a size before adding to cart.");
       return;
     };
-   
     dispatch(addToCart({product, size}))
     }
     

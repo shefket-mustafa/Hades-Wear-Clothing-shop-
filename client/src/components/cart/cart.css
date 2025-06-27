@@ -53,6 +53,15 @@
   cursor: pointer;
 }
 
+.cart-total{
+  font-size: 24px;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
 
 .cart-left-item:hover {
   background-color: #eeeeee;

@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useGetProductById } from "../../../api-hooks/api-hooks";
 import "./itemDetails.css";
 
-export default function ItemDetails({addToCartHandler, setAddPop, setRemovePop}) {
+export default function ItemDetails({addToCartHandler, setAddPop}) {
   const [productDetails, setProductDetails] = useState({});
   const [descriptionClicked, setDescriptionClicked] = useState(true);
   const [availabilityClicked, setavAilabilityClicked] = useState(false);

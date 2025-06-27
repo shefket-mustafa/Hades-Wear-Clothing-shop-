@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import CartLeftItem from '../cart-left-item/CartLeftItem';
 import './cart.css'
-import { changeQuantity, removeFromCart, selectCartItems } from '../../redux/slices/cartSlice';
+import { changeQuantity, removeFromCart, selectCartItems, selectTotalSum } from '../../redux/slices/cartSlice';
 
 export default function Cart({ setRemovePop }) {
   const cartItems = useSelector(selectCartItems);
+  const totalSum = useSelector(selectTotalSum);
   const dispatch = useDispatch();
 
   return <div className="cart-modal">
@@ -27,7 +28,9 @@ export default function Cart({ setRemovePop }) {
       ))
       }
 
+    <div className='cart-total'>
+    <p >Total: {`${totalSum.toFixed(2)} €`}</p>
     </div>
-    
+    </div>
   </div>;
 }
