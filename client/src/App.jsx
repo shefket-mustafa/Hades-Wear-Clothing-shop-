@@ -35,10 +35,10 @@ function App() {
   const allSunglasses = useSelector(state => state.product.sunglasses)
   const allSkincareAndFragrance = useSelector(state => state.product.skincareAndFragrance)
   const allLaptopsAndSmartPhones = useSelector(state => state.product.laptopsAndSmartPhones);
+  
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [addPop, setAddPop] = useState(false);
   const [removePop, setRemovePop] = useState(false);
-  
   const dispatch = useDispatch();
   const totalCartQuantity = useSelector(selectTotalCartQuantity);
   
