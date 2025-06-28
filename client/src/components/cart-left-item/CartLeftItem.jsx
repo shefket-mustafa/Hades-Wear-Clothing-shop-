@@ -30,7 +30,7 @@ export default function CartLeftItem({item, size, quantity, changeQuantity, remo
   </div>
   <div className="cart-left-container">
     <button style={{color: 'black'}} onClick={quantityDecrement}>-</button>
-    <input type="text" value={quantity}/>
+    <input type="text" value={quantity} readOnly/>
     <button style={{color: 'black'}} onClick={quantityIncrement}>+</button>
   </div>
 </div>

@@ -17,6 +17,7 @@ import Cart from "./components/cart/Cart.jsx";
 import Search from "./components/search-modal/Search.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, selectTotalCartQuantity } from "./redux/slices/cartSlice.js";
+import { setAllMenItems, setAllWomenItems, setLaptopsAndSmartPhones, setSkincareAndFragrance, setSunglasses } from "./redux/slices/productSlice.js";
 
 
 
@@ -29,11 +30,11 @@ function App() {
   const {getSkincareAndFrangrances} = useGetSkincareAndFragrances();
   const {getLaptopsAndPhones} = useGetLaptopsAndPhones();
 
-  const [allWomenProducts, setAllWomenProducts] = useState([]);
-  const [allMenProducts, setAllMenProducts] = useState([]);
-  const [allSunglasses, setAllSunglasses] = useState([]);
-  const [allSkincareAndFragrance, setAllSkincareAndFragrance] = useState([]);
-  const [allLaptopsAndSmartPhones, setAllLaptopsAndSmartPhones] = useState([])
+  const allWomenProducts = useSelector(state => state.product.allWomenItems)
+  const allMenProducts = useSelector(state => state.product.allMenItems)
+  const allSunglasses = useSelector(state => state.product.sunglasses)
+  const allSkincareAndFragrance = useSelector(state => state.product.skincareAndFragrance)
+  const allLaptopsAndSmartPhones = useSelector(state => state.product.laptopsAndSmartPhones);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [addPop, setAddPop] = useState(false);
   const [removePop, setRemovePop] = useState(false);
@@ -44,28 +45,26 @@ function App() {
 
   useEffect(() => {
       getAllWomenItems()
-      .then(items => setAllWomenProducts(items))
+      .then(items => dispatch(setAllWomenItems(items)))
   },[]);
   useEffect(() => {
     getAllMensItems()
-    .then(items => setAllMenProducts(items))
+    .then(items => dispatch(setAllMenItems(items)))
 },[]);
 
 useEffect(() => {
   getSunglasses()
-  .then(sunglasses => setAllSunglasses(sunglasses))
+  .then(sunglasses => dispatch(setSunglasses(sunglasses)))
 },[]);
 
 useEffect(() => {
   getSkincareAndFrangrances()
-  .then(products => {
-    setAllSkincareAndFragrance(products)})
+  .then(items => dispatch(setSkincareAndFragrance(items)))
 },[]);
 
 useEffect(() => {
   getLaptopsAndPhones()
-  .then(products => {
-    setAllLaptopsAndSmartPhones(products)})
+  .then(items => dispatch(setLaptopsAndSmartPhones(items)))
 },[]);
 
   const addToCartHandler = (product, size) => {

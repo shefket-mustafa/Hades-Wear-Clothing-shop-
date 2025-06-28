@@ -7,7 +7,6 @@ import { useState } from "react";
 export default function MainCatalog({ allProducts }) {
   const [sortBy, setSortBy] = useState("default");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedSize, setSelectedSize] = useState(null);
   const location = useLocation();
   const pathname = location.pathname;
   const filteredProducts = allProducts.filter(product => {
