@@ -7,9 +7,10 @@ A simple, client-side React app for a fictional clothing brand called **Hades We
 ## 🚀 Tech Stack
 
 - **Javascript**
-- **CSS**
 - **React**
 - **React Router**
+- **Redux/Toolkit** 
+- **CSS**
 - **Axios** 
 
 ---
