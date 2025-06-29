@@ -4,6 +4,7 @@ import './cart.css'
 import { changeQuantity, removeFromCart, selectCartItems, selectTotalSum } from '../../redux/slices/cartSlice';
 
 export default function Cart({ setRemovePop }) {
+  
   const cartItems = useSelector(selectCartItems);
   const totalSum = useSelector(selectTotalSum);
   const dispatch = useDispatch();

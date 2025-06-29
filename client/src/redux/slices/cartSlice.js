@@ -42,11 +42,13 @@ const cartSlice = createSlice({
     },
   },
 });
+
 export const selectCartItems = (state) => state.cart.items;
 export const selectTotalCartQuantity = createSelector(
   (state) => state.cart.items,
   (items) => items.reduce((sum, item) => sum + item.quantity, 0)
 );
+
 export const selectTotalSum = createSelector(
   (state) => state.cart.items,
   (items) => items.reduce((sum,item) => sum + item.price * item.quantity, 0)

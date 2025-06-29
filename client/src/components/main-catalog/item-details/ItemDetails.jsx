@@ -2,15 +2,20 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useGetProductById } from "../../../api-hooks/api-hooks";
 import "./itemDetails.css";
+import { useDispatch, useSelector } from "react-redux";
+import { selectItemDetails, setItemDetails } from "../../../redux/slices/itemDetailsSlice";
+import { addToCart } from "../../../redux/slices/cartSlice";
 
-export default function ItemDetails({addToCartHandler, setAddPop}) {
-  const [productDetails, setProductDetails] = useState({});
+
+export default function ItemDetails({ setAddPop}) {
+  const productDetails = useSelector(selectItemDetails)
   const [descriptionClicked, setDescriptionClicked] = useState(true);
   const [availabilityClicked, setavAilabilityClicked] = useState(false);
   const [dimensionsClicked, setDimensionsClicked] = useState(false);
   const [sizeButtonClicked, setSizeButtonClicked] = useState('');
   const { getProductById } = useGetProductById();
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   const descriptionSetter = () =>{
     setDescriptionClicked( prev => !prev);
@@ -24,13 +29,20 @@ export default function ItemDetails({addToCartHandler, setAddPop}) {
     setDimensionsClicked( prev => !prev);
   }
 
+  const addToCartHandler = (product, size) => {
+    if (!size) {
+      alert("Please select a size before adding to cart.");
+      return;
+    };
+    dispatch(addToCart({product, size}))
+    }
+
   useEffect(() => {
     getProductById(id)
-    .then((productDetails) => {
-      setProductDetails(productDetails);
+    .then((productDetails) => {dispatch(setItemDetails(productDetails));
       
     });
-  }, [ id]);
+  }, [id]);
 
   let sizeButtons = [];
 

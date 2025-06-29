@@ -35,12 +35,12 @@ function App() {
   const allSunglasses = useSelector(state => state.product.sunglasses)
   const allSkincareAndFragrance = useSelector(state => state.product.skincareAndFragrance)
   const allLaptopsAndSmartPhones = useSelector(state => state.product.laptopsAndSmartPhones);
-  
+  const totalCartQuantity = useSelector(selectTotalCartQuantity);
+
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [addPop, setAddPop] = useState(false);
   const [removePop, setRemovePop] = useState(false);
   const dispatch = useDispatch();
-  const totalCartQuantity = useSelector(selectTotalCartQuantity);
   
 
   useEffect(() => {
@@ -67,16 +67,7 @@ useEffect(() => {
   .then(items => dispatch(setLaptopsAndSmartPhones(items)))
 },[]);
 
-  const addToCartHandler = (product, size) => {
-    if (!size) {
-      alert("Please select a size before adding to cart.");
-      return;
-    };
-    dispatch(addToCart({product, size}))
-    }
-    
-
-    
+  
     const removeFromCart = (id, size) => {
       dispatch(removeFromCart({id, size}))
     };
@@ -122,9 +113,9 @@ useEffect(() => {
       <Route path="/catalog/mens-laptops" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('laptops'))}/>}/>
       <Route path="/catalog/mens-smartphones" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('smartphones'))}/>}/>
 
-      <Route path="/catalog/:id/details" element={<ItemDetails addToCartHandler={addToCartHandler} setAddPop={setAddPop} />}/>
+      <Route path="/catalog/:id/details" element={<ItemDetails setAddPop={setAddPop} />}/>
 
-      <Route path="/cart" element={<Cart changeQuantity={changeQuantity} removeFromCart={removeFromCart} setRemovePop={setRemovePop}/>}/>
+      <Route path="/cart" element={<Cart setRemovePop={setRemovePop}/>}/>
 
 
       <Route path="/register" element={<Register/>}/>
