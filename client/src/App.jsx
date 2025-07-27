@@ -2,12 +2,12 @@ import Header from "./components/header-nav/Header"
 import CounterHeader from "./components/counter-header/CounterHeader"
 import Home from "./components/home/Home"
 import Footer from './components/footer/Footer.jsx';
-import { Route, Routes, useParams } from "react-router";
+import { Route, Routes } from "react-router";
 import Scroll from "./components/scroll-ontop/Scroll.jsx";
 import RedLine from "./components/home/red-line/RedLine.jsx";
 import MainCatalog from "./components/main-catalog/MainCatalog.jsx";
 import { useGetAllWomensItems } from "./api-hooks/api-hooks-women.js";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useGetAllMensItems } from "./api-hooks/api-hooks-men.js";
 import { useGetLaptopsAndPhones, useGetSkincareAndFragrances, useGetSunglasses } from "./api-hooks/api-hooks.js";
 import Search from "./components/search-modal/Search.jsx";
@@ -42,6 +42,71 @@ function App() {
   const [addPop, setAddPop] = useState(false);
   const [removePop, setRemovePop] = useState(false);
   const dispatch = useDispatch();
+
+  const womensDresses = useMemo(() => {
+    return allWomenProducts.filter(product => product.category?.endsWith('dresses'))
+  },[allWomenProducts])
+
+  const womensShoes = useMemo(() => {
+    return allWomenProducts.filter(product => product.category?.endsWith('shoes'))
+  },[allWomenProducts])
+
+  const womensBags = useMemo(() => {
+    return allWomenProducts.filter(product => product.category?.endsWith('bags'))
+  },[allWomenProducts])
+
+  const womensWatches = useMemo(() => {
+    return allWomenProducts.filter(product => product.category?.endsWith('watches'))
+  },[allWomenProducts]);
+
+  const womensJewellery = useMemo(() => {
+    return allWomenProducts.filter(product => product.category?.endsWith('jewellery'))
+  },[allWomenProducts]);
+
+  const womensFragrances = useMemo(() => {
+    return allSkincareAndFragrance.filter(product => product.category?.endsWith('fragrances'))
+  },[allSkincareAndFragrance])
+
+   const womensSkincare = useMemo(() => {
+    return allSkincareAndFragrance.filter(product => product.category?.endsWith('skincare'))
+   },[allSkincareAndFragrance]);
+
+   const womensLaptops = useMemo(() => {
+    return allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('laptops'))
+   },[allLaptopsAndSmartPhones]);
+
+   const womensSmartphones = useMemo(() => {
+    return allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('smartphones'))
+   },[allLaptopsAndSmartPhones]);
+
+   const mensShirts = useMemo(() => {
+    return allMenProducts.filter(product => product.category?.endsWith('shirts'));
+  }, [allMenProducts]);
+  
+  const mensShoes = useMemo(() => {
+    return allMenProducts.filter(product => product.category?.endsWith('shoes'));
+  }, [allMenProducts]);
+  
+  const mensWatches = useMemo(() => {
+    return allMenProducts.filter(product => product.category?.endsWith('watches'));
+  }, [allMenProducts]);
+  
+  const mensFragrances = useMemo(() => {
+    return allSkincareAndFragrance.filter(product => product.category?.endsWith('fragrances'));
+  }, [allSkincareAndFragrance]);
+  
+  const mensLaptops = useMemo(() => {
+    return allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('laptops'));
+  }, [allLaptopsAndSmartPhones]);
+  
+  const mensSmartphones = useMemo(() => {
+    return allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('smartphones'));
+  }, [allLaptopsAndSmartPhones]);
+  
+
+
+
+
   
 
   useEffect(() => {
@@ -94,25 +159,25 @@ useEffect(() => {
       <Route path="/" element={<Home />}/>
       <Route path="/catalog/women" element={<MainCatalog allProducts={allWomenProducts}/>}/>
       <Route path="/catalog/womens-accessoaries-sunglasses" element={<MainCatalog  allProducts={allSunglasses}/>}/>
-      <Route path="/catalog/womens-dresses" element={<MainCatalog  allProducts={allWomenProducts.filter(product => product.category?.endsWith('dresses'))}/>}/>
-      <Route path="/catalog/womens-shoes" element={<MainCatalog  allProducts={allWomenProducts.filter(product => product.category?.endsWith('shoes'))}/>}/>
-      <Route path="/catalog/womens-bags" element={<MainCatalog  allProducts={allWomenProducts.filter(product => product.category?.endsWith('bags'))}/>}/>
-      <Route path="/catalog/womens-watches" element={<MainCatalog  allProducts={allWomenProducts.filter(product => product.category?.endsWith('watches'))}/>}/>
-      <Route path="/catalog/womens-jewellery" element={<MainCatalog  allProducts={allWomenProducts.filter(product => product.category?.endsWith('jewellery'))}/>}/>
+      <Route path="/catalog/womens-dresses" element={<MainCatalog  allProducts={womensDresses}/>}/>
+      <Route path="/catalog/womens-shoes" element={<MainCatalog  allProducts={womensShoes}/>}/>
+      <Route path="/catalog/womens-bags" element={<MainCatalog  allProducts={womensBags}/>}/>
+      <Route path="/catalog/womens-watches" element={<MainCatalog  allProducts={womensWatches}/>}/>
+      <Route path="/catalog/womens-jewellery" element={<MainCatalog  allProducts={womensJewellery}/>}/>
       <Route path="/catalog/womens-sunglasses" element={<MainCatalog  allProducts={allSunglasses}/>}/>
-      <Route path="/catalog/womens-fragrances" element={<MainCatalog  allProducts={allSkincareAndFragrance.filter(product => product.category?.endsWith('fragrances'))}/>}/>
-      <Route path="/catalog/womens-skincare" element={<MainCatalog  allProducts={allSkincareAndFragrance.filter(product => product.category?.endsWith('skincare'))}/>}/>
-      <Route path="/catalog/womens-laptops" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('laptops'))}/>}/>
-      <Route path="/catalog/womens-smartphones" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('smartphones'))}/>}/>
+      <Route path="/catalog/womens-fragrances" element={<MainCatalog  allProducts={womensFragrances}/>}/>
+      <Route path="/catalog/womens-skincare" element={<MainCatalog  allProducts={womensSkincare}/>}/>
+      <Route path="/catalog/womens-laptops" element={<MainCatalog  allProducts={womensLaptops}/>}/>
+      <Route path="/catalog/womens-smartphones" element={<MainCatalog  allProducts={womensSmartphones}/>}/>
 
       <Route path="/catalog/men" element={<MainCatalog  allProducts={allMenProducts}/>}/>
       <Route path="/catalog/mens-accessoaries-sunglasses" element={<MainCatalog  allProducts={allSunglasses}/>}/>
-      <Route path="/catalog/mens-shirts" element={<MainCatalog  allProducts={allMenProducts.filter(product => product.category?.endsWith('shirts'))}/>}/>
-      <Route path="/catalog/mens-shoes" element={<MainCatalog  allProducts={allMenProducts.filter(product => product.category?.endsWith('shoes'))}/>}/>
-      <Route path="/catalog/mens-watches" element={<MainCatalog  allProducts={allMenProducts.filter(product => product.category?.endsWith('watches'))}/>}/>
-      <Route path="/catalog/mens-fragrances" element={<MainCatalog  allProducts={allSkincareAndFragrance.filter(product => product.category?.endsWith('fragrances'))}/>}/>
-      <Route path="/catalog/mens-laptops" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('laptops'))}/>}/>
-      <Route path="/catalog/mens-smartphones" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('smartphones'))}/>}/>
+      <Route path="/catalog/mens-shirts" element={<MainCatalog  allProducts={mensShirts}/>}/>
+      <Route path="/catalog/mens-shoes" element={<MainCatalog  allProducts={mensShoes}/>}/>
+      <Route path="/catalog/mens-watches" element={<MainCatalog  allProducts={mensWatches}/>}/>
+      <Route path="/catalog/mens-fragrances" element={<MainCatalog  allProducts={mensFragrances}/>}/>
+      <Route path="/catalog/mens-laptops" element={<MainCatalog  allProducts={mensLaptops}/>}/>
+      <Route path="/catalog/mens-smartphones" element={<MainCatalog  allProducts={mensSmartphones}/>}/>
 
       <Route 
       path="/catalog/:id/details" 
