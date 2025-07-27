@@ -9,16 +9,17 @@ import MainCatalog from "./components/main-catalog/MainCatalog.jsx";
 import { useGetAllWomensItems } from "./api-hooks/api-hooks-women.js";
 import { useEffect, useState } from "react";
 import { useGetAllMensItems } from "./api-hooks/api-hooks-men.js";
-import ItemDetails from "./components/main-catalog/item-details/ItemDetails.jsx";
-import NotFound from "./components/not-found/NotFound.jsx";
-import Register from "./components/auth/register/Register.jsx";
 import { useGetLaptopsAndPhones, useGetSkincareAndFragrances, useGetSunglasses } from "./api-hooks/api-hooks.js";
-import Cart from "./components/cart/Cart.jsx";
 import Search from "./components/search-modal/Search.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, selectTotalCartQuantity } from "./redux/slices/cartSlice.js";
+import { selectTotalCartQuantity } from "./redux/slices/cartSlice.js";
 import { setAllMenItems, setAllWomenItems, setLaptopsAndSmartPhones, setSkincareAndFragrance, setSunglasses } from "./redux/slices/productSlice.js";
+import {Suspense, lazy} from 'react'
 
+const ItemDetails = lazy(() => import('./components/main-catalog/item-details/ItemDetails.jsx'))
+const Cart = lazy(() => import('./components/cart/Cart.jsx'));
+const Register = lazy(() => import('./components/auth/register/Register.jsx'))
+const NotFound = lazy(() => import('./components/not-found/NotFound.jsx'))
 
 
 
@@ -113,15 +114,34 @@ useEffect(() => {
       <Route path="/catalog/mens-laptops" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('laptops'))}/>}/>
       <Route path="/catalog/mens-smartphones" element={<MainCatalog  allProducts={allLaptopsAndSmartPhones.filter(product => product.category?.endsWith('smartphones'))}/>}/>
 
-      <Route path="/catalog/:id/details" element={<ItemDetails setAddPop={setAddPop} />}/>
+      <Route 
+      path="/catalog/:id/details" 
+      element={
+      <Suspense fallback = {<div>Loading...</div>}>
+      <ItemDetails setAddPop={setAddPop} />
+      </Suspense>
+      }/>
 
-      <Route path="/cart" element={<Cart setRemovePop={setRemovePop}/>}/>
+      <Route path="/cart"
+      element={
+      <Suspense fallback =  {<div>Loading...</div>}>
+      <Cart setRemovePop={setRemovePop}/>
+      </Suspense>
+      
+      }/>
+
+      <Route path="/register" element={
+      <Suspense fallback = {<div>Loading...</div>}>
+      <Register/>
+      </Suspense>
+      }/>
 
 
-      <Route path="/register" element={<Register/>}/>
-
-
-      <Route path="*" element={<NotFound />} />
+      <Route path="*" element={
+      <Suspense fallback ={<div>Loading...</div>} >
+      <NotFound/>
+      </Suspense>
+      } />
     </Routes>
     <RedLine />
       <Footer />

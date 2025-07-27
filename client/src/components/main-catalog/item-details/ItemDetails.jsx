@@ -7,7 +7,7 @@ import { selectItemDetails, setItemDetails } from "../../../redux/slices/itemDet
 import { addToCart } from "../../../redux/slices/cartSlice";
 
 
-export default function ItemDetails({ setAddPop}) {
+export default function ItemDetails({setAddPop}) {
   const productDetails = useSelector(selectItemDetails)
   const [descriptionClicked, setDescriptionClicked] = useState(true);
   const [availabilityClicked, setavAilabilityClicked] = useState(false);
