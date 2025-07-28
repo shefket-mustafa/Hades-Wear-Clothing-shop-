@@ -16,6 +16,7 @@ export default function ItemDetails({setAddPop}) {
   const { getProductById } = useGetProductById();
   const { id } = useParams();
   const dispatch = useDispatch();
+  const user = useSelector(state => state.auth.user);
 
   const descriptionSetter = () =>{
     setDescriptionClicked( prev => !prev);
@@ -104,9 +105,9 @@ export default function ItemDetails({setAddPop}) {
 
         <hr className="right-details-first-break" />
 
-        <div className="right-details-size-add-freesh">
+        {user &&<div className="right-details-size-add-freesh">
           <span>Size</span>
-
+          
           <div className="right-details-sizes">
           {sizeButtons.map((size) => (
             <button 
@@ -155,7 +156,7 @@ export default function ItemDetails({setAddPop}) {
             </p>
 
           </div>
-        </div>
+        </div>}
 
         <div className="right-tab-share">
           <p>Share:</p>

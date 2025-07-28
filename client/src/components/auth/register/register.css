@@ -21,6 +21,17 @@
     z-index: 1;
   }
 
+  .register-already{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .register-already a{
+   text-decoration: none;
+   color: gray;
+  }
+
 .register-form{
     display: flex;
     flex-direction: column;
