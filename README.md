@@ -1,17 +1,25 @@
 # 🧥 Hades Wear – Clothing Shop
 
-A simple, client-side React app for a fictional clothing brand called **Hades Wear**.
+A modern, responsive full-stack web app for a fictional clothing brand called **Hades Wear**.
 
 ---
 
 ## 🚀 Tech Stack
 
-- **Javascript**
-- **React**
-- **React Router**
-- **Redux/Toolkit** 
-- **CSS**
-- **Axios** 
+- **Frontend:**
+  - JavaScript
+  - React
+  - React Router
+  - Redux Toolkit
+  - Axios
+  - CSS
+  - React Hook Form
+  - Yup (form validation)
+
+- **Backend:**
+  - Express
+  - MongoDB (via Mongoose)
+  - JSON Web Token (JWT) authentication
 
 ---
 
@@ -29,66 +37,76 @@ A simple, client-side React app for a fictional clothing brand called **Hades We
 - Responsive design (mobile-first)
 
 ---
+## 🔐 Authentication
+
+- Custom **Express + MongoDB backend** deployed on [Render](https://hades-wear-clothing-shop-1.onrender.com)
+- JWT-based secure authentication
+- Backend URL: `https://hades-wear-clothing-shop-1.onrender.com`
+- Implemented with **Redux Toolkit** and `createAsyncThunk` for async login/register actions
+- Form validation powered by **React Hook Form + Yup**
+- Dynamic view rendering based on auth state:
+  - 🧑 **Authenticated users** see account features and logout options
+  - 👤 **Guests** see only sign up and public catalog features
+- Auth state persisted via `localStorage`
+---
 
 ## 📁 Project Structure
 
 ```
 Hades-Wear/
-├── client/       # Main React application
-│   ├── public/   # Static assets
-│   ├── src/      # Components, pages, and routing
+├── client/                 # React frontend application
+│   ├── public/             # Static assets 
+│   ├── src/                # Source code
+│   │   ├── components/     # Reusable components
+│   │   ├── pages/          # Route-level pages (Login, Register, Catalog, etc.)
+│   │   ├── redux/          # Redux slices and store
+│   │   ├── assets/         # Images and styles
+│   │   ├── App.jsx         # Root component
+│   │   └── main.jsx        # Entry point
 │   └── ...
-├── server/       # A placeholder server.js (non-functional yet)
+├── server/                 # Express backend with MongoDB for Auth
+│   ├── models/             # Mongoose models
+│   ├── routes/             # Express route handlers
+│   ├── config.js           # dotenv config
+│   └── server.js           # Entry point for backend
 └── README.md
 ```
 
 ---
 
-## ▶️ Getting Started
+## ⚙️ Getting started
 
-
-1. **Clone the repository**
+### 1. Clone the repo
 
 ```bash
+# 1. Clone the repository
 git clone git@github.com:shefket-mustafa/Hades-Wear-Clothing-shop-.git
-cd Hades-Wear-Clothing-shop/client
+cd Shade-Zone
 ```
 
-2. **Install dependencies**
+### 2. Setup Front-End
 
 ```bash
+cd client
 npm install
-```
-
-3. **Run the app**
-
-```bash
 npm run dev
 ```
+
+### 3. Setup Back-End
+
+```bash
+cd server
+npm install
+node server.js        
+```
+
 
 ## 📦 Live Demo
 
 [Hades Wear Clothing Store](https://hades-wear-clothing-shop.vercel.app) 
 
 
----
-
-## + Currently working on
-
-- [ ] Global state managment with Redux
-
-
-
 
 ---
-## 🧠 Future Improvements
 
-
-- [ ] Admin dashboard for inventory
-- [ ] Authentication
-
-
-
-
----
 
