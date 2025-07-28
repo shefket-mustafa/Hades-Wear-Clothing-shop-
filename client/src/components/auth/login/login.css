@@ -69,6 +69,11 @@
     font-weight: 600;
     color: #333;
 }
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
 
 
     .login-form input {

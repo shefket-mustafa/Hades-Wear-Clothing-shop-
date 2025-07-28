@@ -3,16 +3,18 @@ import { Link, useNavigate } from "react-router";
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../redux/slices/authSlice';
-import { useState } from 'react';
-import PopUp from '../../pop-ups/popUp';
 import { clearPopUp, showPopUp } from '../../../redux/slices/popUpSlice';
+import { loginSchema } from '../../../yup/loginSchema';
+import {yupResolver} from "@hookform/resolvers/yup"
 
 
 export default function Login() {
 
-  const {register, handleSubmit} = useForm();
+  
   const dispatch = useDispatch()
   const navigate = useNavigate();
+
+  const {register, handleSubmit, formState: {errors}} = useForm({resolver: yupResolver(loginSchema)});
 
 
   const submitHandler = (data) => {
@@ -31,10 +33,13 @@ export default function Login() {
     <p className='login-title'>Login</p>
 
     <label htmlFor="email">Email</label>
-    <input {...register("email")} name="email" type="text" placeholder="John Doe" required/>
+    <input {...register("email")} name="email" type='text' required/>
+    {errors.email && <p className="error">{errors.email.message}</p>}
 
     <label htmlFor="password">Password</label>
-    <input {...register("password")} name="password" type="text" placeholder="******" required/>
+    
+    <input {...register("password")} name="password" type='password' required/>
+    {errors.password && <p className="error">{errors.password.message}</p>}
 
     <button>Submit</button>
 
