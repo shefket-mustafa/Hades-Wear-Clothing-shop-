@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./slices/cartSlice"
 import productReducer from "./slices/productSlice"
 import authReducer from "./slices/authSlice"
+import popUpReducer from "./slices/popUpSlice"
 import itemDetailsReducer from "./slices/itemDetailsSlice"
 import storage from 'redux-persist/lib/storage'
 import {persistStore, persistReducer} from "redux-persist"
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
     auth: authReducer,
     cart: cartReducer,
     product: productReducer,
-    itemDetails: itemDetailsReducer
+    itemDetails: itemDetailsReducer,
+    popUp: popUpReducer
 });
 
 //config: key for local storage, whitelist is telling what we will persist

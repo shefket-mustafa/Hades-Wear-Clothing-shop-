@@ -1,8 +1,10 @@
 import './register.css';
 import { Link, useNavigate } from "react-router";
-import {useDispatch} from "redux";
+import {useDispatch} from "react-redux";
 import {useForm} from "react-hook-form";
 import { registerUser } from '../../../redux/slices/authSlice';
+import { useState } from 'react';
+import { clearPopUp, showPopUp } from '../../../redux/slices/popUpSlice';
 
 
 export default function Register() {
@@ -14,9 +16,13 @@ export default function Register() {
     if(data.password !== data.confirmPassword){
       return alert("Passwords do not match")
     }
+   
     dispatch(registerUser(data))
     .unwrap()
-    .then(() => navigate('/'))
+    .then(() => {
+      dispatch(showPopUp("Registration successful"));
+      setTimeout(() => dispatch(clearPopUp()), 2000)
+      navigate('/')})
     .catch(err => alert(err.message || "Registration failed"))
   }
 
@@ -35,12 +41,12 @@ export default function Register() {
     <label htmlFor="confirmPassword">Confirm password</label>
     <input {...register("confirmPassword")} name="confirmPassword" type="text" placeholder="******" required/>
 
+    <button type='submit'>Submit</button>
+    
     <div className='register-already'>
     <p>Already registered?</p>
     <Link to='/login'>Login</Link>
     </div>
-
-    <button type='submit'>Submit</button>
     </form>
   </div>;
 }
