@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectTotalCartQuantity } from "./redux/slices/cartSlice.js";
 import { setAllMenItems, setAllWomenItems, setLaptopsAndSmartPhones, setSkincareAndFragrance, setSunglasses } from "./redux/slices/productSlice.js";
 import {Suspense, lazy} from 'react'
+import Login from "./components/auth/login/Login.jsx";
 
 const ItemDetails = lazy(() => import('./components/main-catalog/item-details/ItemDetails.jsx'))
 const Cart = lazy(() => import('./components/cart/Cart.jsx'));
@@ -198,6 +199,12 @@ useEffect(() => {
       <Route path="/register" element={
       <Suspense fallback = {<div>Loading...</div>}>
       <Register/>
+      </Suspense>
+      }/>
+
+<Route path="/login" element={
+      <Suspense fallback = {<div>Loading...</div>}>
+      <Login/>
       </Suspense>
       }/>
 

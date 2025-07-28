@@ -1,4 +1,4 @@
-.register-container{
+.login-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@
   position: relative;
 }
 
-.register-container::before {
+.login-container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -21,18 +21,18 @@
     z-index: 1;
   }
 
-  .register-already{
+  .login-already{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
   }
-  .register-already a{
+  .login-already a{
    text-decoration: none;
    color: gray;
   }
 
-.register-form{
+.login-form{
     display: flex;
     flex-direction: column;
     width: 300px;
@@ -50,15 +50,15 @@
     z-index: 2;
 }
 
-.register-form label{
-    .register-form label {
+.login-form label{
+    .login-form label {
         padding-top: 12px;
         font-size: 14px;
         color: #555;
       }
 }
 
-.register-title{
+.login-title{
     position: absolute;
     top: 0;
     left: 50%;
@@ -71,20 +71,20 @@
 }
 
 
-    .register-form input {
+    .login-form input {
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 6px;
         font-size: 14px;
         transition: border-color 0.3s ease;
       }
-.register-form input:focus {
+.login-form input:focus {
   outline: none;
   border-color: #4e6866;
   box-shadow: 0 0 0 2px rgba(78, 104, 102, 0.2);
 }
 
-.register-form button {
+.login-form button {
     margin-top: 20px;
     padding: 10px;
     background-color: #4e6866;
@@ -95,7 +95,7 @@
     transition: background-color 0.2s ease;
   }
   
-  .register-form button:hover {
+  .login-form button:hover {
     background-color: #3e5655;
   }
 

@@ -1,6 +1,5 @@
 import './register.css'
-import registerImg from '../../../assets/images/register-form.jpg'
-
+import { Link } from "react-router";
 export default function Register() {
   return <div className="register-container">
 
@@ -15,6 +14,11 @@ export default function Register() {
 
     <label htmlFor="confirmPassword">Confirm password</label>
     <input name="confirmPassword" type="text" placeholder="******" required/>
+
+    <div className='register-already'>
+    <p>Already registered?</p>
+    <Link to='/login'>Login</Link>
+    </div>
 
     <button>Submit</button>
     </form>
