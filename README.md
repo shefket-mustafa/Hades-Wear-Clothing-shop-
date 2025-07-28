@@ -4,6 +4,12 @@ A modern, responsive full-stack web app for a fictional clothing brand called **
 
 ---
 
+## 📦 Live Demo
+
+[Hades Wear Clothing Store](https://hades-wear-clothing-shop.vercel.app) 
+
+---
+
 ## 🚀 Tech Stack
 
 - **Frontend:**
@@ -99,12 +105,6 @@ cd server
 npm install
 node server.js        
 ```
-
-
-## 📦 Live Demo
-
-[Hades Wear Clothing Store](https://hades-wear-clothing-shop.vercel.app) 
-
 
 
 ---
