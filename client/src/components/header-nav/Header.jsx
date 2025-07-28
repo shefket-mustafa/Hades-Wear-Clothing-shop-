@@ -110,6 +110,7 @@ export default function Header({cartLength, onToggle, addPop, removePop}) {
         </button>
 
         <Link to='/register'>Sign up</Link>
+        <button className="logout-btn">Logout</button>
     </div>
 
     

@@ -13,7 +13,7 @@ export default function Login() {
     <input name="password" type="text" placeholder="******" required/>
 
     <div className='login-already'>
-    <p>Do not have a registration?</p>
+    <p>Not registratered?</p>
     <Link to='/register'>Register</Link>
     </div>
 

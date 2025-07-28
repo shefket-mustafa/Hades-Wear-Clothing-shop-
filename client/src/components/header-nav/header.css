@@ -47,6 +47,15 @@
   color: black;
   font-family: sans-serif;
 }
+.logout-btn {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  border: none;
+  font-size: medium;
+  font-family: sans-serif;
+  cursor: pointer;
+}
 
 .search {
     border: none;
