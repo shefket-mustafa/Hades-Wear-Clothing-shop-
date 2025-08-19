@@ -86,7 +86,7 @@
 }
 
 .menu-item{
-    position: relative;
+    position: static;
     margin-left: 80px;
     
 }
@@ -94,12 +94,13 @@
 .menu-item .dropdown{
     min-height: 300px;
     display: flex;
-    position: fixed;
-    top: 115px;
+    position: absolute;
+    top: 100%;
     left: 0;
+    right: 0;
     background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100vw;
+    width: 100%;
     opacity: 0;
     background: linear-gradient(to bottom, white 80%, transparent);
     backdrop-filter: blur(5px); 
